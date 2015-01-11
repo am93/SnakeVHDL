@@ -1,0 +1,1 @@
+vhdtdtfi -prj Snakey -o C:/Users/Ajda/Documents/GitHub/SnakeVHDL/Snakey/vga_top.vhi -module vga_top -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work counter.vhd -lib work vsync.vhd -lib work RAM30x40.vhd -lib work hsync.vhd -lib work vga_top.vhd 
