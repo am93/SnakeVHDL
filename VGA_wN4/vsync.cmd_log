@@ -1,0 +1,4 @@
+vhdtdtfi -prj VGA -o C:/Users/Ajda/Documents/Projekti/VGA/vsync.vhi -module vsync -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work counter.vhd -lib work vsync.vhd 
+vhdtdtfi -prj VGA -o C:/Users/Ajda/Documents/Projekti/VGA/vsync.vhi -module vsync -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work counter.vhd -lib work vsync.vhd 
+vhdtdtfi -prj VGA -o C:/Users/Ajda/Documents/Projekti/VGA/vsync.vhi -module vsync -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work counter.vhd -lib work vsync.vhd 
+vhdtdtfi -prj VGA -o C:/Users/Ajda/Documents/Projekti/VGA/vsync.vhi -module vsync -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work counter.vhd -lib work vsync.vhd 

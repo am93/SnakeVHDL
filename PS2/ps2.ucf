@@ -1,0 +1,40 @@
+#Nexys4 User Demo User Constraint File
+# System Clock, 100MHz
+NET "clk_m" LOC = "E3" |IOSTANDARD = "LVCMOS33";
+
+# Pushbuttons
+NET "rst_i" LOC = "T16" |IOSTANDARD = "LVCMOS33";
+
+# LEDs
+NET "data_out[0]" LOC = "T8"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[1]" LOC = "V9"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[2]" LOC = "R8"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[3]" LOC = "T6"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[4]" LOC = "T5"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[5]" LOC = "T4"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[6]" LOC = "U7"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[7]" LOC = "U6"  |IOSTANDARD = "LVCMOS33";
+NET "data_out[8]" LOC = "V1"  |IOSTANDARD = "LVCMOS33";
+NET "sc_ready" LOC = "V4"  |IOSTANDARD = "LVCMOS33";
+
+# 8-Digit Seven-Segment Display Segments
+NET "cathode_o[0]" LOC = "L3" |IOSTANDARD = "LVCMOS33";
+NET "cathode_o[1]" LOC = "N1" |IOSTANDARD = "LVCMOS33";
+NET "cathode_o[2]" LOC = "L5" |IOSTANDARD = "LVCMOS33";
+NET "cathode_o[3]" LOC = "L4" |IOSTANDARD = "LVCMOS33";
+NET "cathode_o[4]" LOC = "K3" |IOSTANDARD = "LVCMOS33";
+NET "cathode_o[5]" LOC = "M2" |IOSTANDARD = "LVCMOS33";
+NET "cathode_o[6]" LOC = "L6" |IOSTANDARD = "LVCMOS33";
+# 8-Digit Seven-Segment Display Anodes, Active-Low
+NET "anode_o[0]" LOC = "N6" |IOSTANDARD = "LVCMOS33";
+NET "anode_o[1]" LOC = "M6" |IOSTANDARD = "LVCMOS33";
+NET "anode_o[2]" LOC = "M3" |IOSTANDARD = "LVCMOS33";
+NET "anode_o[3]" LOC = "N5" |IOSTANDARD = "LVCMOS33";
+
+# PS2 Signals
+net kbdclk LOC = "F4"  |IOSTANDARD = "LVCMOS33" |PULLUP;
+net kbddata LOC = "B2" |IOSTANDARD = "LVCMOS33" |PULLUP;
+
+# Incoming System Clock PERIOD Constraint
+NET "clk_m" TNM_NET = clk_m;
+TIMESPEC TS_clk = PERIOD "clk_m" 10 ns HIGH 50%;

@@ -1,0 +1,4 @@
+vhdl work "C:\Users\Ajda\Documents\Projekti\VGA\counter.vhd"
+vhdl work "C:\Users\Ajda\Documents\Projekti\VGA\vsync.vhd"
+vhdl work "C:\Users\Ajda\Documents\Projekti\VGA\hsync.vhd"
+vhdl work "C:\Users\Ajda\Documents\Projekti\VGA\vga_top.vhd"

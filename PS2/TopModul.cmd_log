@@ -1,0 +1,7 @@
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/TopModul.vhi -module TopModul -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work sevseg.vhd -lib work prescaler.vhd -lib work counter.vhd -lib work TopModul.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/TopModul.vhi -module TopModul -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work sevseg.vhd -lib work prescaler.vhd -lib work TopModul.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/TopModul.vhi -module TopModul -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work sevseg.vhd -lib work prescaler.vhd -lib work TopModul.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/TopModul.vhi -module TopModul -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work sevseg.vhd -lib work prescaler.vhd -lib work TopModul.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/TopModul.vhi -module TopModul -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work sevseg.vhd -lib work prescaler.vhd -lib work TopModul.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/TopModul.vhi -module TopModul -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work sevseg.vhd -lib work prescaler.vhd -lib work TopModul.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/TopModul.vhi -module TopModul -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work sevseg.vhd -lib work prescaler.vhd -lib work TopModul.vhd 

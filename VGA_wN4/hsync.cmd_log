@@ -1,0 +1,27 @@
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 hsync.ngc hsync.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o hsync_map.ncd hsync.ngd hsync.pcf 
+par -w -intstyle ise -ol high -t 1 hsync_map.ncd hsync.ncd hsync.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml hsync.twx hsync.ncd -o hsync.twr hsync.pcf 
+bitgen -intstyle ise -f hsync.ut hsync.ncd 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/hsync.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 hsync.ngc hsync.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o hsync_map.ncd hsync.ngd hsync.pcf 
+par -w -intstyle ise -ol high -t 1 hsync_map.ncd hsync.ncd hsync.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml hsync.twx hsync.ncd -o hsync.twr hsync.pcf 
+bitgen -intstyle ise -f hsync.ut hsync.ncd 
+vhdtdtfi -prj VGA -o C:/Users/Ajda/Documents/Projekti/VGA/hsync.vhi -module hsync -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work counter.vhd -lib work hsync.vhd 

@@ -1,0 +1,11 @@
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -lib work control_unit.vhd -prj PS2 -o control_unit.spl -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 control_unit.spl C:/Users/Anze/Projects/VHDL/PS2/control_unit.sym 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/control_unit.vhi -module control_unit -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work control_unit.vhd 

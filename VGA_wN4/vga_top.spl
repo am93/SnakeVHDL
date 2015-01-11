@@ -1,0 +1,10 @@
+[Inputs]
+clk_in
+reset_i
+[Outputs]
+hsync_o
+vsync_o
+=red_o[2:0]=
+=green_o[2:0]=
+=blue_o[1:0]=
+[BiDir]

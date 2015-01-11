@@ -1,0 +1,2 @@
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/shiftReg.vhi -module shiftReg -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work shiftReg.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/shiftReg.vhi -module shiftReg -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work shiftReg.vhd 

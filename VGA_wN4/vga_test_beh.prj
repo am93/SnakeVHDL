@@ -1,0 +1,5 @@
+vhdl work "counter.vhd"
+vhdl work "vsync.vhd"
+vhdl work "hsync.vhd"
+vhdl work "vga_top.vhd"
+vhdl work "vga_test.vhd"

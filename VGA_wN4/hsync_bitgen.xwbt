@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Ajda\Documents\Projekti\VGA\hsync.ncd
+OUTFILE=C:\Users\Ajda\Documents\Projekti\VGA\hsync.bit
+FAMILY=Spartan3E
+PART=xc3s500e-5fg320
+WORKINGDIR=C:\Users\Ajda\Documents\Projekti\VGA
+LICENSE=WebPack
+USER_INFO=210643289_0_0_772

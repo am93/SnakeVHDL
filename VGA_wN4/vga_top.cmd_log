@@ -1,0 +1,101 @@
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vga.ucf -p xc3s500e-fg320-5 vga_top.ngc vga_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vga.ucf -p xc3s500e-fg320-5 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+vhdtdtfi -lib work counter.vhd -lib work vsync.vhd -lib work hsync.vhd -lib work vga_top.vhd -prj VGA -o vga_top.spl -module vga_top -template C:/Xilinx/14.6/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 vga_top.spl C:/Users/Ajda/Documents/Projekti/VGA/vga_top.sym 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.xst" -ofn "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.xst" -ofn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.xst" -ofn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.xst" -ofn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.xst" -ofn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.xst" -ofn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 
+xst -intstyle ise -ifn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.xst" -ofn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.syr" 
+xst -intstyle ise -ifn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.xst" -ofn "C:/Users/Anze/Projects/VHDL/VGA_wN4/vga_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc vga_nexys4.ucf -p xc7a100t-csg324-1 vga_top.ngc vga_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o vga_top_map.ncd vga_top.ngd vga_top.pcf 
+par -w -intstyle ise -ol high -mt off vga_top_map.ncd vga_top.ncd vga_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml vga_top.twx vga_top.ncd -o vga_top.twr vga_top.pcf -ucf vga_nexys4.ucf 
+bitgen -intstyle ise -f vga_top.ut vga_top.ncd 

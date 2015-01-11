@@ -1,0 +1,6 @@
+vhdl work "ipcore_dir/clockgen.vhd"
+vhdl work "counter.vhd"
+vhdl work "vsync.vhd"
+vhdl work "RAM30x40.vhd"
+vhdl work "hsync.vhd"
+vhdl work "vga_top.vhd"

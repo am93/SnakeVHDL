@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Anze\Projects\VHDL\VGA_wN4\vga_top.ncd
+OUTFILE=C:\Users\Anze\Projects\VHDL\VGA_wN4\vga_top.bit
+FAMILY=Artix7
+PART=xc7a100t-1csg324
+WORKINGDIR=C:\Users\Anze\Projects\VHDL\VGA_wN4
+LICENSE=WebPack
+USER_INFO=210643289_0_0_772

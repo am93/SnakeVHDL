@@ -1,0 +1,29 @@
+Command line:
+   vga_test_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  2713
+
+Thu Nov 13 17:08:33 2014
+
+
+ Elaboration Time: 0.140402 sec
+
+ Current Memory Usage: 825.254 Meg
+
+ Total Signals          : 55
+ Total Nets             : 102
+ Total Signal Drivers   : 26
+ Total Blocks           : 10
+ Total Primitive Blocks : 6
+ Total Processes        : 17
+ Total Traceable Variables  : 31
+ Total Scalar Nets and Variables : 619
+Total Line Count : 65
+
+ Total Simulation Time: 15.8185 sec
+
+ Current Memory Usage: 667.967 Meg
+
+Thu Nov 13 18:20:07 2014
+

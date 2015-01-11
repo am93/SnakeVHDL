@@ -1,0 +1,8 @@
+AR counter behavioral C:/Users/Ajda/Documents/Projekti/VGA/counter.vhd sub00/vhpl01 1415889605
+AR hsync behavioral C:/Users/Ajda/Documents/Projekti/VGA/hsync.vhd sub00/vhpl03 1415889607
+AR vga_top behavioral C:/Users/Ajda/Documents/Projekti/VGA/vga_top.vhd sub00/vhpl07 1415889611
+EN hsync NULL C:/Users/Ajda/Documents/Projekti/VGA/hsync.vhd sub00/vhpl02 1415889606
+AR vsync behavioral C:/Users/Ajda/Documents/Projekti/VGA/vsync.vhd sub00/vhpl05 1415889609
+EN counter NULL C:/Users/Ajda/Documents/Projekti/VGA/counter.vhd sub00/vhpl00 1415889604
+EN vsync NULL C:/Users/Ajda/Documents/Projekti/VGA/vsync.vhd sub00/vhpl04 1415889608
+EN vga_top NULL C:/Users/Ajda/Documents/Projekti/VGA/vga_top.vhd sub00/vhpl06 1415889610

@@ -1,0 +1,8 @@
+[Inputs]
+clk_i
+pulse_i
+sync_kbddata_i
+[Outputs]
+rdy_o
+shren_o
+[BiDir]

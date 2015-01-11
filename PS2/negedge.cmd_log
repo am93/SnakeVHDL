@@ -1,0 +1,3 @@
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/negedge.vhi -module negedge -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work negedge.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/negedge.vhi -module negedge -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work negedge.vhd 
+vhdtdtfi -prj PS2 -o C:/Users/Anze/Projects/VHDL/PS2/negedge.vhi -module negedge -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work negedge.vhd 

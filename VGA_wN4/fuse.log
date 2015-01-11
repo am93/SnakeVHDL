@@ -1,0 +1,29 @@
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/Ajda/Documents/Projekti/VGA/vga_test_isim_beh.exe -prj C:/Users/Ajda/Documents/Projekti/VGA/vga_test_beh.prj work.vga_test 
+ISim P.68d (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Ajda/Documents/Projekti/VGA/counter.vhd" into library work
+Parsing VHDL file "C:/Users/Ajda/Documents/Projekti/VGA/vsync.vhd" into library work
+Parsing VHDL file "C:/Users/Ajda/Documents/Projekti/VGA/hsync.vhd" into library work
+Parsing VHDL file "C:/Users/Ajda/Documents/Projekti/VGA/vga_top.vhd" into library work
+Parsing VHDL file "C:/Users/Ajda/Documents/Projekti/VGA/vga_test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity counter [\counter(11)\]
+Compiling architecture behavioral of entity hsync [\hsync(11,192,1280,96,32,1600,10...]
+Compiling architecture behavioral of entity counter [\counter(9)\]
+Compiling architecture behavioral of entity vsync [\vsync(10,2,480,10,29,521)\]
+Compiling architecture behavioral of entity vga_top [vga_top_default]
+Compiling architecture behavior of entity vga_test
+Time Resolution for simulation is 1ps.
+Waiting for 3 sub-compilation(s) to finish...
+Compiled 16 VHDL Units
+Built simulation executable C:/Users/Ajda/Documents/Projekti/VGA/vga_test_isim_beh.exe
+Fuse Memory Usage: 36244 KB
+Fuse CPU Usage: 2043 ms

@@ -1,0 +1,8 @@
+vhdl work "ipcore_dir/clk_gen.vhd"
+vhdl work "sevseg.vhd"
+vhdl work "prescaler.vhd"
+vhdl work "TopModul.vhd"
+vhdl work "shiftReg.vhd"
+vhdl work "negedge.vhd"
+vhdl work "control_unit.vhd"
+vhdl work "ps2_top.vhd"

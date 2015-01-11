@@ -1,0 +1,2 @@
+vhdtdtfi -prj VGA -o C:/Users/Anze/Projects/VHDL/VGA_wN4/RAM32x40.vhi -module RAM32x40 -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work RAM30x40.vhd 
+vhdtdtfi -prj VGA -o C:/Users/Anze/Projects/VHDL/VGA_wN4/RAM32x40.vhi -module RAM32x40 -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work RAM30x40.vhd 

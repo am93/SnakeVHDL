@@ -1,0 +1,99 @@
+//! **************************************************************************
+// Written by: Map P.68d on Thu Dec 18 15:35:32 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "hsync_o" LOCATE = SITE "B11" LEVEL 1;
+COMP "blue_o<0>" LOCATE = SITE "B7" LEVEL 1;
+COMP "blue_o<1>" LOCATE = SITE "C7" LEVEL 1;
+COMP "green_o<0>" LOCATE = SITE "C6" LEVEL 1;
+COMP "green_o<1>" LOCATE = SITE "A5" LEVEL 1;
+COMP "green_o<2>" LOCATE = SITE "B6" LEVEL 1;
+COMP "clk_in" LOCATE = SITE "E3" LEVEL 1;
+COMP "red_o<0>" LOCATE = SITE "A3" LEVEL 1;
+COMP "red_o<1>" LOCATE = SITE "B4" LEVEL 1;
+COMP "reset_i" LOCATE = SITE "E16" LEVEL 1;
+COMP "red_o<2>" LOCATE = SITE "C5" LEVEL 1;
+COMP "vsync_o" LOCATE = SITE "B12" LEVEL 1;
+TIMEGRP newclk_clkout0 = BEL "color_0" BEL "color_1" BEL "color_2" BEL
+        "color_3" BEL "color_4" BEL "color_5" BEL "color_6" BEL "color_7" BEL
+        "curr_bit" BEL "newclk/clkout1_buf" BEL "Inst_hsync/cnt/count_10" BEL
+        "Inst_hsync/cnt/count_9" BEL "Inst_hsync/cnt/count_8" BEL
+        "Inst_hsync/cnt/count_7" BEL "Inst_hsync/cnt/count_6" BEL
+        "Inst_hsync/cnt/count_5" BEL "Inst_hsync/cnt/count_4" BEL
+        "Inst_hsync/cnt/count_3" BEL "Inst_hsync/cnt/count_2" BEL
+        "Inst_hsync/cnt/count_1" BEL "Inst_hsync/cnt/count_0" BEL
+        "Inst_vsync/cnt/count_9" BEL "Inst_vsync/cnt/count_8" BEL
+        "Inst_vsync/cnt/count_7" BEL "Inst_vsync/cnt/count_6" BEL
+        "Inst_vsync/cnt/count_5" BEL "Inst_vsync/cnt/count_4" BEL
+        "Inst_vsync/cnt/count_3" BEL "Inst_vsync/cnt/count_2" BEL
+        "Inst_vsync/cnt/count_1" BEL "Inst_vsync/cnt/count_0" BEL
+        "Inst_vsync/vvidon" BEL "Inst_vsync/vsync" BEL
+        "Inst_RAM32x40/my_row_0" BEL "Inst_RAM32x40/my_row_1" BEL
+        "Inst_RAM32x40/my_row_2" BEL "Inst_RAM32x40/my_row_3" BEL
+        "Inst_RAM32x40/my_row_4" BEL "Inst_RAM32x40/my_row_5" BEL
+        "Inst_RAM32x40/my_row_6" BEL "Inst_RAM32x40/my_row_7" BEL
+        "Inst_RAM32x40/my_row_8" BEL "Inst_RAM32x40/my_row_9" BEL
+        "Inst_RAM32x40/my_row_10" BEL "Inst_RAM32x40/my_row_11" BEL
+        "Inst_RAM32x40/my_row_12" BEL "Inst_RAM32x40/my_row_13" BEL
+        "Inst_RAM32x40/my_row_14" BEL "Inst_RAM32x40/my_row_15" BEL
+        "Inst_RAM32x40/my_row_16" BEL "Inst_RAM32x40/my_row_17" BEL
+        "Inst_RAM32x40/my_row_18" BEL "Inst_RAM32x40/my_row_19" BEL
+        "Inst_RAM32x40/my_row_20" BEL "Inst_RAM32x40/my_row_21" BEL
+        "Inst_RAM32x40/my_row_22" BEL "Inst_RAM32x40/my_row_24" BEL
+        "Inst_RAM32x40/my_row_25" BEL "Inst_RAM32x40/my_row_26" BEL
+        "Inst_RAM32x40/my_row_27" BEL "Inst_RAM32x40/my_row_28" BEL
+        "Inst_RAM32x40/my_row_29" BEL "Inst_RAM32x40/my_row_30" BEL
+        "Inst_RAM32x40/my_row_31" BEL "Inst_RAM32x40/my_row_32" BEL
+        "Inst_RAM32x40/my_row_33" BEL "Inst_RAM32x40/my_row_34" BEL
+        "Inst_RAM32x40/my_row_35" BEL "Inst_RAM32x40/my_row_36" BEL
+        "Inst_RAM32x40/my_row_37" BEL "Inst_RAM32x40/my_row_38" BEL
+        "Inst_RAM32x40/my_row_39" BEL "Inst_vsync/cnt/count_8_1" BEL
+        "Inst_vsync/cnt/count_7_1" BEL "Inst_vsync/cnt/count_6_1" BEL
+        "Inst_RAM32x40/Mram_RAM40/SP" BEL "Inst_RAM32x40/Mram_RAM40/DP" BEL
+        "Inst_RAM32x40/Mram_RAM39/SP" BEL "Inst_RAM32x40/Mram_RAM39/DP" BEL
+        "Inst_RAM32x40/Mram_RAM37/SP" BEL "Inst_RAM32x40/Mram_RAM37/DP" BEL
+        "Inst_RAM32x40/Mram_RAM36/SP" BEL "Inst_RAM32x40/Mram_RAM36/DP" BEL
+        "Inst_RAM32x40/Mram_RAM38/SP" BEL "Inst_RAM32x40/Mram_RAM38/DP" BEL
+        "Inst_RAM32x40/Mram_RAM35/SP" BEL "Inst_RAM32x40/Mram_RAM35/DP" BEL
+        "Inst_RAM32x40/Mram_RAM34/SP" BEL "Inst_RAM32x40/Mram_RAM34/DP" BEL
+        "Inst_RAM32x40/Mram_RAM32/SP" BEL "Inst_RAM32x40/Mram_RAM32/DP" BEL
+        "Inst_RAM32x40/Mram_RAM31/SP" BEL "Inst_RAM32x40/Mram_RAM31/DP" BEL
+        "Inst_RAM32x40/Mram_RAM33/SP" BEL "Inst_RAM32x40/Mram_RAM33/DP" BEL
+        "Inst_RAM32x40/Mram_RAM30/SP" BEL "Inst_RAM32x40/Mram_RAM30/DP" BEL
+        "Inst_RAM32x40/Mram_RAM29/SP" BEL "Inst_RAM32x40/Mram_RAM29/DP" BEL
+        "Inst_RAM32x40/Mram_RAM27/SP" BEL "Inst_RAM32x40/Mram_RAM27/DP" BEL
+        "Inst_RAM32x40/Mram_RAM26/SP" BEL "Inst_RAM32x40/Mram_RAM26/DP" BEL
+        "Inst_RAM32x40/Mram_RAM28/SP" BEL "Inst_RAM32x40/Mram_RAM28/DP" BEL
+        "Inst_RAM32x40/Mram_RAM25/SP" BEL "Inst_RAM32x40/Mram_RAM25/DP" BEL
+        "Inst_RAM32x40/Mram_RAM24/SP" BEL "Inst_RAM32x40/Mram_RAM24/DP" BEL
+        "Inst_RAM32x40/Mram_RAM22/SP" BEL "Inst_RAM32x40/Mram_RAM22/DP" BEL
+        "Inst_RAM32x40/Mram_RAM21/SP" BEL "Inst_RAM32x40/Mram_RAM21/DP" BEL
+        "Inst_RAM32x40/Mram_RAM23/SP" BEL "Inst_RAM32x40/Mram_RAM23/DP" BEL
+        "Inst_RAM32x40/Mram_RAM20/SP" BEL "Inst_RAM32x40/Mram_RAM20/DP" BEL
+        "Inst_RAM32x40/Mram_RAM19/SP" BEL "Inst_RAM32x40/Mram_RAM19/DP" BEL
+        "Inst_RAM32x40/Mram_RAM17/SP" BEL "Inst_RAM32x40/Mram_RAM17/DP" BEL
+        "Inst_RAM32x40/Mram_RAM16/SP" BEL "Inst_RAM32x40/Mram_RAM16/DP" BEL
+        "Inst_RAM32x40/Mram_RAM18/SP" BEL "Inst_RAM32x40/Mram_RAM18/DP" BEL
+        "Inst_RAM32x40/Mram_RAM15/SP" BEL "Inst_RAM32x40/Mram_RAM15/DP" BEL
+        "Inst_RAM32x40/Mram_RAM14/SP" BEL "Inst_RAM32x40/Mram_RAM14/DP" BEL
+        "Inst_RAM32x40/Mram_RAM12/SP" BEL "Inst_RAM32x40/Mram_RAM12/DP" BEL
+        "Inst_RAM32x40/Mram_RAM11/SP" BEL "Inst_RAM32x40/Mram_RAM11/DP" BEL
+        "Inst_RAM32x40/Mram_RAM13/SP" BEL "Inst_RAM32x40/Mram_RAM13/DP" BEL
+        "Inst_RAM32x40/Mram_RAM10/SP" BEL "Inst_RAM32x40/Mram_RAM10/DP" BEL
+        "Inst_RAM32x40/Mram_RAM9/SP" BEL "Inst_RAM32x40/Mram_RAM9/DP" BEL
+        "Inst_RAM32x40/Mram_RAM7/SP" BEL "Inst_RAM32x40/Mram_RAM7/DP" BEL
+        "Inst_RAM32x40/Mram_RAM6/SP" BEL "Inst_RAM32x40/Mram_RAM6/DP" BEL
+        "Inst_RAM32x40/Mram_RAM8/SP" BEL "Inst_RAM32x40/Mram_RAM8/DP" BEL
+        "Inst_RAM32x40/Mram_RAM5/SP" BEL "Inst_RAM32x40/Mram_RAM5/DP" BEL
+        "Inst_RAM32x40/Mram_RAM4/SP" BEL "Inst_RAM32x40/Mram_RAM4/DP" BEL
+        "Inst_RAM32x40/Mram_RAM2/SP" BEL "Inst_RAM32x40/Mram_RAM2/DP" BEL
+        "Inst_RAM32x40/Mram_RAM1/SP" BEL "Inst_RAM32x40/Mram_RAM1/DP" BEL
+        "Inst_RAM32x40/Mram_RAM3/SP" BEL "Inst_RAM32x40/Mram_RAM3/DP";
+PIN newclk/mmcm_adv_inst_pins<2> = BEL "newclk/mmcm_adv_inst" PINNAME CLKIN1;
+TIMEGRP sys_clk_pin = PIN "newclk/mmcm_adv_inst_pins<2>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+TS_newclk_clkout0 = PERIOD TIMEGRP "newclk_clkout0" TS_sys_clk_pin * 0.5 HIGH
+        50%;
+SCHEMATIC END;
+
