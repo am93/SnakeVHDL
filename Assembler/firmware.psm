@@ -1,134 +1,126 @@
-			CONSTANT delay_1us_constant, 0B
+			CONSTANT delay_1us_constant	, 0B
+
 			
-			ADDRESS 000	; program se vedno zacne na naslovu 0
+			ADDRESS 000			; program se vedno zacne na naslovu 0
 			
-			ENABLE INTERRUPT
+			ENABLE INTERRUPT	; omogocimo prekinitve
 			
-start:      CALL clear
-			LOAD s3, 0A ;row
-			LOAD s4, 0D ;column
-			LOAD s5, 04 ;snake length
-			LOAD s6, 01 ;constant 1
-			LOAD s7, 00 ;constant 0
-			LOAD s8, 00 ;scratchpad offset
-			LOAD sC, 23 ;scan code
-			; s9, sA, sB - temporary variables
-			; sD - game mode
-			LOAD sE, 25 ;food row
-			LOAD sF, C6 ;food column
+start:      CALL clear			; pobrisemo zaslon
+			LOAD s3, 0A 		; row
+			LOAD s4, 0D 		; column
+			LOAD s5, 04 		; snake length
+			LOAD s6, 01 		; constant 1
+			LOAD s7, 00 		; constant 0
+			LOAD s8, 00 		; scratchpad offset
+			LOAD sC, 23 		; sc -> kaca zacne v desno
+			LOAD sE, 25			; food row
+			LOAD sF, C6 		; food column
 			
-			;CALL lfsr
-			OUTPUT sE, 00
-			OUTPUT sF, 01
-			OUTPUT s6, 02
+			OUTPUT sE, 00		; hrana v VHDL 
+			OUTPUT sF, 01		; hrana v VHDL
+			OUTPUT s6, 02		; barva hrane v VHDL
 			
-			LOAD s5, 04
-			LOAD s9, s5
+			LOAD s5, 04			; dolzina kace
+			LOAD s9, s5			; kopija dolzine kace za stevec
 
 
-init:		SUB s4, 01
-			STORE s3, (s8)
-			ADD s8, 01
-			STORE s4, (s8)
-			ADD s8, 01
+init:		SUB s4, 01			; zmanjsaj stolpec
+			STORE s3, (s8)		; shrani vrstico
+			ADD s8, 01			; povecaj offset
+			STORE s4, (s8)		; shrani stolpec
+			ADD s8, 01			; povecaj offset
 			
-			OUTPUT s4, 01
-			OUTPUT	s3, 00			
-			OUTPUT s6, 02
-			SUB s9, 01
-			COMPARE s9, 00
-			JUMP NZ, init
+			OUTPUT s4, 01		; stolpec v VHDL
+			OUTPUT	s3, 00		; vrstica v VHDL	
+			OUTPUT s6, 02		; barva kace v VHDL
+			SUB s9, 01			; zmanjsaj stevec dolzine kace
+			COMPARE s9, 00		; preveri ce je stevec 0
+			JUMP NZ, init		; ponovi ce stevec != 0
 			
 			
 
 
-main:       ;game mode
-			INPUT sD, 04
-
-
+main:       
 			;if pojemo hrano
-			;JUMP eat
-			;JUMP lfsr
-			FETCH s3, 02
-			FETCH s4, 03
-			LOAD sA, sE
-			AND sA, 1F
-			COMPARE s3, sA
-			JUMP NZ, move
-			LOAD sA, sF
-			AND sA, 3F
-			COMPARE s4, sA
-			JUMP NZ, move
-			;LOAD sC, 23
-			;ADD s5, 01
-			LOAD s9, s5
-			SL0 s9
-			SUB s9, 01
-			LOAD s8, s9
-			ADD s8, 02
-			ADD s5, 01
-			CALL lfsr
-			JUMP move_body
+			FETCH s3, 02		; pridobi vrstico 
+			FETCH s4, 03		; pridobi stolpec
+			LOAD sA, sE			; vrstica hrane
+			AND sA, 1F			; vzemi spodnjih 5 bitov
+			COMPARE s3, sA		; preveri ce je na isti vrstici kot hrana
+			JUMP NZ, move		; ce ni, naredi premik
+			
+			LOAD sA, sF			; stolpec hrane
+			AND sA, 3F			; vzemi spodnjih 6 bitov
+			COMPARE s4, sA		; preveri ce je v istem stolpcu kot hrana
+			JUMP NZ, move		; ce ni, naredi premik
+			
+			LOAD s9, s5			; nalozi dolzino kace
+			SL0 s9				; dolzino pomnoziva z 2 
+			SUB s9, 01			; zmanjsaj za 1
+			LOAD s8, s9			; shrani odmik
+			ADD s8, 02			; povecaj odmik za 2
+			ADD s5, 01			; povecaj dolzino za 1
+			CALL lfsr			; poklici lfsr
+			JUMP move_body		; premakni telo
 
 move:		
-			;LOAD s8, 00
-			LOAD s8, s5
-			SL0 s8
+			LOAD s8, s5			; nalozi dolzino
+			SL0 s8				; pomnozi z 2
 
 			;remove tail
-			SUB s8, 01
-			FETCH s4, (s8)
-			SUB s8, 01
-			FETCH s3, (s8)
+			SUB s8, 01			; zmanjsaj odmik za 1		
+			FETCH s4, (s8)		; pridobi stolpec
+			SUB s8, 01			; zmanjsaj odmik za 1
+			FETCH s3, (s8)		; pridobi vrstico
 			
-			OUTPUT s3, 00
-			OUTPUT s4, 01
-			OUTPUT s7, 02
+			OUTPUT s3, 00		; vrstica v VHDL
+			OUTPUT s4, 01		; stolpec v VHDL
+			OUTPUT s7, 02		; postavi piksel na 0 (VHDL)
 			
-			LOAD s8, s5
-			SL0 s8
-			SUB s8, 01
-			LOAD s9, s8
-			SUB s9, 02
+			LOAD s8, s5			; nalozi dolzino
+			SL0 s8				; pomnozi s 2
+			SUB s8, 01			; zmanjsaj za 1
+			LOAD s9, s8			; shrani v s9	
+			SUB s9, 02			; zmanjsaj za 2
 
 move_body:
-			FETCH s4, (s9)
-			SUB s9, 01
-			FETCH s3, (s9)
-			SUB s9, 01
+			FETCH s4, (s9)		; pridobi stolpec
+			SUB s9, 01			; zmanjsaj odmik
+			FETCH s3, (s9)		; pridobi vrstico
+			SUB s9, 01			; zmanjsaj odmik
 			
-			STORE s4, (s8)
-			SUB s8, 01
-			STORE s3, (s8)
-			SUB s8, 01
+			STORE s4, (s8)		; shrani stolpec na nov odmik
+			SUB s8, 01			; zmanjsaj za 1
+			STORE s3, (s8)		; shrani vrstico na nov odmik
+			SUB s8, 01			; zmanjsaj za 1
 			
-			OUTPUT s3, 00
-			OUTPUT s4, 01
-			OUTPUT s6, 02
+			OUTPUT s3, 00		; vrstica v VHDL
+			OUTPUT s4, 01		; stolpec v VHDL
+			OUTPUT s6, 02		; piksel na 1 v VHDL
 
-			COMPARE s8, 01
-			JUMP NZ, move_body
+			COMPARE s8, 01		; primerjaj z ena
+			JUMP NZ, move_body	; ponovi ce ni enak 1
 			
 			
-			FETCH s3, 00
-			FETCH s4, 01
+			FETCH s3, 00		; vrstica glave
+			FETCH s4, 01		; stolpec glave
 			
 
 			
-			COMPARE sC, 1B
+			COMPARE sC, 1B		; preveri scan kodo -> dol
 			JUMP Z, movedown 
 
-			COMPARE sC, 1C
+			COMPARE sC, 1C		; preveri scan kodo -> levo
 			JUMP Z, moveleft
 				
-			COMPARE sC, 1D
+			COMPARE sC, 1D		; preveri scan kodo -> gor
 			JUMP Z, moveup
 			
-			COMPARE sC, 23
+			COMPARE sC, 23		; prever scan kodo -> desno
 			JUMP Z, moveright
 			
 
-movedown:	COMPARE s3, 1D
+movedown:	COMPARE s3, 1D		
 			JUMP Z, start
 			ADD s3, 01
 			STORE s3, 00
@@ -166,7 +158,6 @@ turn_on:	FETCH s3, (s8)
 			COMPARE sA, 00
 			JUMP NZ, turn_on
 			
-			COMPARE sD, 01
 			JUMP Z, fast
 			CALL delay_500us	
 			CALL delay_500us
