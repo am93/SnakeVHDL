@@ -1,0 +1,280 @@
+			CONSTANT delay_1us_constant, 0B
+			
+			ADDRESS 000	; program se vedno zacne na naslovu 0
+			
+			ENABLE INTERRUPT
+			
+start:      CALL clear
+			LOAD s3, 0A ;row
+			LOAD s4, 0D ;column
+			LOAD s5, 04 ;snake length
+			LOAD s6, 01 ;constant 1
+			LOAD s7, 00 ;constant 0
+			LOAD s8, 00 ;scratchpad offset
+			LOAD sC, 23 ;scan code
+			; s9, sA, sB - temporary variables
+			; sD - game mode
+			LOAD sE, 25 ;food row
+			LOAD sF, C6 ;food column
+			
+			;CALL lfsr
+			OUTPUT sE, 00
+			OUTPUT sF, 01
+			OUTPUT s6, 02
+			
+			LOAD s5, 04
+			LOAD s9, s5
+
+
+init:		SUB s4, 01
+			STORE s3, (s8)
+			ADD s8, 01
+			STORE s4, (s8)
+			ADD s8, 01
+			
+			OUTPUT s4, 01
+			OUTPUT	s3, 00			
+			OUTPUT s6, 02
+			SUB s9, 01
+			COMPARE s9, 00
+			JUMP NZ, init
+			
+			
+
+
+main:       ;game mode
+			INPUT sD, 04
+
+
+			;if pojemo hrano
+			;JUMP eat
+			;JUMP lfsr
+			FETCH s3, 02
+			FETCH s4, 03
+			LOAD sA, sE
+			AND sA, 1F
+			COMPARE s3, sA
+			JUMP NZ, move
+			LOAD sA, sF
+			AND sA, 3F
+			COMPARE s4, sA
+			JUMP NZ, move
+			;LOAD sC, 23
+			;ADD s5, 01
+			LOAD s9, s5
+			SL0 s9
+			SUB s9, 01
+			LOAD s8, s9
+			ADD s8, 02
+			ADD s5, 01
+			CALL lfsr
+			JUMP move_body
+
+move:		
+			;LOAD s8, 00
+			LOAD s8, s5
+			SL0 s8
+
+			;remove tail
+			SUB s8, 01
+			FETCH s4, (s8)
+			SUB s8, 01
+			FETCH s3, (s8)
+			
+			OUTPUT s3, 00
+			OUTPUT s4, 01
+			OUTPUT s7, 02
+			
+			LOAD s8, s5
+			SL0 s8
+			SUB s8, 01
+			LOAD s9, s8
+			SUB s9, 02
+
+move_body:
+			FETCH s4, (s9)
+			SUB s9, 01
+			FETCH s3, (s9)
+			SUB s9, 01
+			
+			STORE s4, (s8)
+			SUB s8, 01
+			STORE s3, (s8)
+			SUB s8, 01
+			
+			OUTPUT s3, 00
+			OUTPUT s4, 01
+			OUTPUT s6, 02
+
+			COMPARE s8, 01
+			JUMP NZ, move_body
+			
+			
+			FETCH s3, 00
+			FETCH s4, 01
+			
+
+			
+			COMPARE sC, 1B
+			JUMP Z, movedown 
+
+			COMPARE sC, 1C
+			JUMP Z, moveleft
+				
+			COMPARE sC, 1D
+			JUMP Z, moveup
+			
+			COMPARE sC, 23
+			JUMP Z, moveright
+			
+
+movedown:	COMPARE s3, 1D
+			JUMP Z, start
+			ADD s3, 01
+			STORE s3, 00
+			JUMP endcase			
+
+moveleft:	COMPARE s4, 00
+			JUMP Z, start
+			SUB s4, 01			
+			STORE s4, 01
+			JUMP endcase
+
+moveup:		COMPARE s3, 00
+			JUMP Z, start
+			SUB s3, 01
+			STORE s3, 00
+			JUMP endcase
+
+moveright:	COMPARE s4, 27
+			JUMP Z, start
+			ADD s4, 01
+			STORE s4, 01
+endcase:	LOAD sA, s5
+			LOAD s8, 00
+turn_on:	FETCH s3, (s8)
+			ADD s8, 01
+			FETCH s4,(s8)
+			ADD s8, 01
+			
+			
+			OUTPUT s3, 00
+			OUTPUT s4, 01
+			OUTPUT s6, 02
+			
+			SUB sA, 01
+			COMPARE sA, 00
+			JUMP NZ, turn_on
+			
+			COMPARE sD, 01
+			JUMP Z, fast
+			CALL delay_500us	
+			CALL delay_500us
+			CALL delay_500us
+			CALL delay_500us
+			CALL delay_500us
+			CALL delay_500us
+			CALL delay_500us
+			CALL delay_500us
+			CALL delay_500us
+			CALL delay_500us
+			
+	fast:		JUMP main
+			
+lfsr:			LOAD sB, sE
+				AND sB, 01
+				COMPARE sB, 00
+				JUMP Z, zero1
+				JUMP one1
+	rotate1:	RR sE
+				LOAD sA, sE
+				AND sA, 1F
+				COMPARE sA, 1E
+				JUMP C, row
+				LOAD sA, 1D
+	row:		OUTPUT sA, 00
+				LOAD sB, sF
+				AND sB, 01
+				COMPARE sB, 00
+				JUMP Z, zero2
+				JUMP one2
+	rotate2:	RR sF
+				LOAD sA, sF
+				AND sA, 3F
+				COMPARE sA, 28
+				JUMP C, col
+				LOAD sA, 27
+	col:		OUTPUT sA, 01				
+				OUTPUT s6, 02
+				RETURN
+	
+	zero1:	XOR sE, 00
+			JUMP rotate1
+	one1: 	XOR sE, C1
+			JUMP rotate1
+	zero2:	XOR sF, 00
+			JUMP rotate2
+	one2: 	XOR sF, C1
+			JUMP rotate2
+	
+			
+
+isr:		
+			INPUT sA, 03
+			COMPARE sC, 1D
+			JUMP Z, chck1C
+	chck1B:	COMPARE sA, 1B
+			JUMP Z, goodsc
+			COMPARE sC, 23
+			JUMP Z, chck1D
+	chck1C:	COMPARE sA, 1C
+			JUMP Z, goodsc
+			COMPARE sC, 1B
+			JUMP Z, chck23
+	chck1D:	COMPARE sA, 1D
+			JUMP Z, goodsc
+			COMPARE sC, 1C
+			JUMP Z, badsc
+	chck23:	COMPARE sA, 23
+			JUMP Z, goodsc
+			JUMP badsc
+	goodsc:	LOAD sC, sA
+			;LOAD sC, 1D
+	badsc:	RETURNI ENABLE 
+
+
+clear:		LOAD s4, 28
+	loop1:	LOAD s3,1E
+			SUB s4, 01
+		loop2:	SUB s3, 01
+				OUTPUT s3, 00
+				OUTPUT s4, 01
+				OUTPUT s7, 02
+				COMPARE s3, 00
+				JUMP NZ, loop2
+			
+			COMPARE s4, 00
+			JUMP NZ, loop1
+			RETURN
+	
+delay_1us: 
+	LOAD s0, delay_1us_constant
+wait_1us: 
+	SUB s0, 01
+	JUMP NZ, wait_1us
+	RETURN
+	
+delay_500us:
+	LOAD s2, F0
+	LOAD s1, BD
+wait_500us: 
+	CALL delay_1us
+	SUB s1, 01
+	SUBCY s2, 00
+	JUMP NC, wait_500us
+	RETURN
+			
+			
+            ADDRESS      3FF     ; prekinitveno s5rvisna rutina s5 nahaja na zadnjem
+								 ;naslovu v romu (3FF)
+			JUMP      isr        ; isr = interrupt s5rvice routine
