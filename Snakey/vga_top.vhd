@@ -133,7 +133,8 @@ begin
 			else
 				curr_bit <= data_got(conv_integer(column(9 downto 4)));
 				if (hvidon='1' AND vvidon='1' AND curr_bit='1') then
-					color <= row(7 downto 0);
+					--color <= row(7 downto 0);
+					color <= "00011100";
 				else
 					color <= (others => '0');
 				end if;

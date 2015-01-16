@@ -1,5 +1,1 @@
-work	"RAM30x40.vhd"
-work	"counter.vhd"
-work	"hsync.vhd"
-work	"vga_top.vhd"
-work	"vsync.vhd"
+work	"kcpsm6.vhd"

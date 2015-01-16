@@ -1,0 +1,1 @@
+vhdtdtfi -prj Snakey -o C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey/kcpsm6.vhi -module kcpsm6 -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work kcpsm6.vhd 

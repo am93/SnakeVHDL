@@ -43,9 +43,7 @@ begin
 	begin
 		if (clk_i'event and clk_i = '1') then
 			if (we_i = '1') then
-				my_row <= RAM(conv_integer(addrIN_i));
-				my_row(conv_integer(col_i)) <= data_i;
-				RAM(conv_integer(addrIN_i)) <= my_row;
+				RAM(conv_integer(addrIN_i))(conv_integer(col_i)) <= data_i;
 			end if;
 		end if;
 	end process;

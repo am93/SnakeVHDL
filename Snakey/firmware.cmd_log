@@ -1,0 +1,1 @@
+vhdtdtfi -prj Snakey -o C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey/firmware.vhi -module firmware -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work firmware.vhd 
