@@ -1,0 +1,1 @@
+vhdtdtfi -prj Snakey -o C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey/LED_Control.vhi -module LED_Control -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work LED_Control.vhd 

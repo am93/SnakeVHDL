@@ -40,7 +40,8 @@ entity snake_top is
            green_o : out  STD_LOGIC_VECTOR (2 downto 0);
            blue_o : out  STD_LOGIC_VECTOR (1 downto 0);
 			  cathode_o : out STD_LOGIC_VECTOR (0 to 6);
-			  anode_o : out STD_LOGIC_VECTOR (3 downto 0)
+			  anode_o : out STD_LOGIC_VECTOR (3 downto 0);
+			  led_o : out STD_LOGIC_VECTOR(15 downto 0)
 			  );
 end snake_top;
 
@@ -73,7 +74,7 @@ architecture Behavioral of snake_top is
 		write_enable : IN std_logic;
 		column_in : IN std_logic_vector(5 downto 0);
 		row_in : IN std_logic_vector(4 downto 0);
-		data_in : IN std_logic;          
+		data_in : IN std_logic_vector(1 downto 0);          
 		hsync_o : OUT std_logic;
 		vsync_o : OUT std_logic;
 		red_o : OUT std_logic_vector(2 downto 0);
@@ -111,6 +112,15 @@ architecture Behavioral of snake_top is
 		);
 	END COMPONENT;
 	
+	COMPONENT LED_Control
+	PORT(
+		clk_i : IN std_logic;
+		rst_i : IN std_logic;
+		enable_i : IN std_logic_vector(1 downto 0);          
+		led_o : OUT std_logic_vector(15 downto 0)
+		);
+	END COMPONENT;
+	
 	-- interna ura (50MHz)
 	signal clk_i:				std_logic;
 	
@@ -122,7 +132,7 @@ architecture Behavioral of snake_top is
 	signal write_enable:		std_logic;
 	signal row:					std_logic_vector(4 downto 0);
 	signal column:				std_logic_vector(5 downto 0);
-	signal data:				std_logic;
+	signal data:				std_logic_vector(1 downto 0);
 	
 	-- firmware signali
 	signal address :			std_logic_vector(11 downto 0);
@@ -206,6 +216,13 @@ begin
 		clk => clk_i
 	);
 	
+	Inst_LED_Control: LED_Control PORT MAP(
+		clk_i => clk_i,
+		rst_i => reset_i,
+		enable_i => data,
+		led_o => led_o
+	);
+	
 	-- proces za prekinitve
 	process (clk_i)
 	begin
@@ -240,7 +257,7 @@ begin
 					when X"01" =>
 						column <= kcpsm_outport(5 downto 0);
 					when others =>
-						data <= kcpsm_outport(0);
+						data <= kcpsm_outport(1 downto 0);
 						write_enable <= '1';						
 				end case;
 			end if;

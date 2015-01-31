@@ -42,7 +42,7 @@ entity vga_top is
 			  write_enable:	in  STD_LOGIC;
 			  column_in: 		in  STD_LOGIC_VECTOR(5 downto 0);
 			  row_in: 			in  STD_LOGIC_VECTOR(4 downto 0);
-			  data_in:			in	 STD_LOGIC;
+			  data_in:			in	 STD_LOGIC_VECTOR(1 downto 0);
            hsync_o : 		out  STD_LOGIC;
            vsync_o : 		out  STD_LOGIC;
 			  red_o: 			out STD_LOGIC_VECTOR(2 downto 0);
@@ -85,8 +85,9 @@ architecture Behavioral of vga_top is
 	signal row: STD_LOGIC_VECTOR(vcount_width-1 downto 0);
 	signal color: STD_LOGIC_VECTOR(7 downto 0);
 	-- signals for RAM
-	signal data_got: STD_LOGIC_VECTOR(39 downto 0);
-	signal curr_bit: STD_LOGIC;
+	signal data_got_first: STD_LOGIC_VECTOR(39 downto 0);
+	signal data_got_second: STD_LOGIC_VECTOR(39 downto 0);
+	signal curr_bit: STD_LOGIC_VECTOR(1 downto 0);
 
 begin
 	
@@ -108,16 +109,27 @@ begin
 		vvidon_o => vvidon
 	);
 	
-	Inst_RAM32x40: RAM32x40 PORT MAP(
+	-- prvi RAM 
+	Inst_RAM30x40_first: RAM32x40 PORT MAP(
 		clk_i => clk_i,
 		we_i => write_enable,
 		addrIN_i => row_in,
 		col_i => column_in,
 		addrOUT_i => row(8 downto 4),
-		data_i => data_in,
-		data_o => data_got
+		data_i => data_in(1),
+		data_o => data_got_first
 	);
 	
+	-- drugi RAM 
+	Inst_RAM30x40_second: RAM32x40 PORT MAP(
+		clk_i => clk_i,
+		we_i => write_enable,
+		addrIN_i => row_in,
+		col_i => column_in,
+		addrOUT_i => row(8 downto 4),
+		data_i => data_in(0),
+		data_o => data_got_second
+	);
 	
 	
 	red_o <= color(7 downto 5);
@@ -131,10 +143,21 @@ begin
 			if (reset_i='1') then
 				color <= (others => '0');
 			else
-				curr_bit <= data_got(conv_integer(column(9 downto 4)));
-				if (hvidon='1' AND vvidon='1' AND curr_bit='1') then
-					--color <= row(7 downto 0);
-					color <= "00011100";
+				-- bita iz RAMa
+				curr_bit(1) <= data_got_first(conv_integer(column(9 downto 4)));
+				curr_bit(0) <= data_got_second(conv_integer(column(9 downto 4)));
+				if (hvidon='1' AND vvidon='1') then
+					case(curr_bit) is
+						-- barva za kaco
+						when "10" =>
+							color <= "00011100";
+						-- barva za hrano
+						when "01" =>
+							color <= "11100000";
+						-- barva za ozadje
+						when others =>
+							color <= (others => '0');
+					end case;
 				else
 					color <= (others => '0');
 				end if;

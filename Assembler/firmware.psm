@@ -12,7 +12,7 @@ start:      CALL clear			; pobrisemo zaslon
 			LOAD s6, 01 		; constant 1
 			LOAD s7, 00 		; constant 0
 			LOAD s8, 00 		; scratchpad offset
-			LOAD sC, 23 		; sc -> kaca zacne v desno
+			LOAD sC, 1C 		; sc -> kaca zacne v desno
 			LOAD sE, 25			; food row
 			LOAD sF, C6 		; food column
 			
@@ -31,11 +31,13 @@ init:		SUB s4, 01			; zmanjsaj stolpec
 			ADD s8, 01			; povecaj offset
 			
 			OUTPUT s4, 01		; stolpec v VHDL
-			OUTPUT	s3, 00		; vrstica v VHDL	
+			OUTPUT	s3, 00		; vrstica v VHDL
+			LOAD s6, 02			; vrednost binarna 10 za barvo kace			
 			OUTPUT s6, 02		; barva kace v VHDL
 			SUB s9, 01			; zmanjsaj stevec dolzine kace
 			COMPARE s9, 00		; preveri ce je stevec 0
 			JUMP NZ, init		; ponovi ce stevec != 0
+			LOAD s6, 01			; popravimo vrednost s6
 			
 			
 
@@ -96,10 +98,12 @@ move_body:
 			
 			OUTPUT s3, 00		; vrstica v VHDL
 			OUTPUT s4, 01		; stolpec v VHDL
+			LOAD s6, 02			; vrednost binarna 10 za barvo kace
 			OUTPUT s6, 02		; piksel na 1 v VHDL
 
 			COMPARE s8, 01		; primerjaj z ena
 			JUMP NZ, move_body	; ponovi ce ni enak 1
+			LOAD s6, 01			; popravimo s6 nazaj na 1
 			
 			
 			FETCH s3, 00		; vrstica glave
@@ -126,9 +130,9 @@ movedown:	COMPARE s3, 1D
 			STORE s3, 00
 			JUMP endcase			
 
-moveleft:	COMPARE s4, 00
+moveleft:	COMPARE s4, 27 ;00
 			JUMP Z, start
-			SUB s4, 01			
+			ADD s4, 01			
 			STORE s4, 01
 			JUMP endcase
 
@@ -138,9 +142,9 @@ moveup:		COMPARE s3, 00
 			STORE s3, 00
 			JUMP endcase
 
-moveright:	COMPARE s4, 27
+moveright:	COMPARE s4, 00 ; 27
 			JUMP Z, start
-			ADD s4, 01
+			SUB s4, 01
 			STORE s4, 01
 endcase:	LOAD sA, s5
 			LOAD s8, 00
@@ -150,6 +154,8 @@ turn_on:	FETCH s3, (s8)
 			ADD s8, 01
 			
 			
+			LOAD s6, 02			; vrednost binarna 10 za barvo kace
+			
 			OUTPUT s3, 00
 			OUTPUT s4, 01
 			OUTPUT s6, 02
@@ -158,7 +164,9 @@ turn_on:	FETCH s3, (s8)
 			COMPARE sA, 00
 			JUMP NZ, turn_on
 			
-			JUMP Z, fast
+			LOAD s6, 01			; popravi vrednost s6
+			
+			;JUMP Z, fast
 			CALL delay_500us	
 			CALL delay_500us
 			CALL delay_500us
@@ -180,9 +188,9 @@ lfsr:			LOAD sB, sE
 	rotate1:	RR sE
 				LOAD sA, sE
 				AND sA, 1F
-				COMPARE sA, 1E
+				COMPARE sA, 1D
 				JUMP C, row
-				LOAD sA, 1D
+				LOAD sA, 1C
 	row:		OUTPUT sA, 00
 				LOAD sB, sF
 				AND sB, 01

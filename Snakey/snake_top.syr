@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.34 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.34 secs
  
 --> Reading design: snake_top.prj
@@ -147,6 +147,9 @@ Parsing architecture <Behavioral> of entity <vga_top>.
 Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ps2_top.vhd" into library work
 Parsing entity <ps2_top>.
 Parsing architecture <Behavioral> of entity <ps2_top>.
+Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\LED_Control.vhd" into library work
+Parsing entity <LED_Control>.
+Parsing architecture <Behavioral> of entity <led_control>.
 Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\kcpsm6.vhd" into library work
 Parsing entity <kcpsm6>.
 Parsing architecture <low_level_definition> of entity <kcpsm6>.
@@ -201,22 +204,25 @@ Elaborating entity <firmware> (architecture <low_level_definition>) with generic
 
 Elaborating entity <kcpsm6> (architecture <low_level_definition>) with generics from library <work>.
 
+Elaborating entity <LED_Control> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\LED_Control.vhd" Line 112. Case statement is complete. others clause is never selected
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <snake_top>.
     Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd".
-INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 192: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 192: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
-    Found 1-bit register for signal <data>.
+INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 202: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 202: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+    Found 2-bit register for signal <data>.
     Found 6-bit register for signal <column>.
     Found 5-bit register for signal <row>.
     Found 1-bit register for signal <write_enable>.
     Found 8-bit register for signal <kcpsm_inport>.
     Found 1-bit register for signal <kcpsm_int>.
     Summary:
-	inferred  22 D-type flip-flop(s).
+	inferred  23 D-type flip-flop(s).
 Unit <snake_top> synthesized.
 
 Synthesizing Unit <clkgen>.
@@ -333,12 +339,14 @@ Synthesizing Unit <vga_top>.
     Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\vga_top.vhd".
         hcount_width = 11
         vcount_width = 10
-    Found 1-bit register for signal <curr_bit>.
+    Found 2-bit register for signal <curr_bit>.
     Found 8-bit register for signal <color>.
-    Found 1-bit 40-to-1 multiplexer for signal <column[9]_X_16_o_Mux_3_o> created at line 134.
+    Found 4x8-bit Read Only RAM for signal <curr_bit[1]_GND_48_o_wide_mux_5_OUT>
+    Found 2-bit 40-to-1 multiplexer for signal <n0028> created at line 143.
     Summary:
-	inferred   9 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	inferred   1 RAM(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <vga_top> synthesized.
 
 Synthesizing Unit <hsync>.
@@ -1847,21 +1855,48 @@ Synthesizing Unit <kcpsm6>.
 	no macro.
 Unit <kcpsm6> synthesized.
 
+Synthesizing Unit <LED_Control>.
+    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\LED_Control.vhd".
+    Found 1-bit register for signal <insert>.
+    Found 2-bit register for signal <state>.
+    Found 16-bit register for signal <led>.
+    Found finite state machine <FSM_4> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk_i (rising_edge)                            |
+    | Reset              | rst_i (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | s0                                             |
+    | Power Up State     | s0                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <LED_Control> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
  16x7-bit single-port Read Only RAM                    : 1
+ 4x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 3
  10-bit adder                                          : 1
  11-bit adder                                          : 1
  18-bit adder                                          : 1
-# Registers                                            : 1218
- 1-bit register                                        : 1209
+# Registers                                            : 2420
+ 1-bit register                                        : 2408
  10-bit register                                       : 1
  11-bit register                                       : 1
+ 16-bit register                                       : 1
  18-bit register                                       : 1
+ 2-bit register                                        : 2
  4-bit register                                        : 1
  5-bit register                                        : 1
  6-bit register                                        : 1
@@ -1870,14 +1905,15 @@ Macro Statistics
 # Comparators                                          : 6
  10-bit comparator greater                             : 3
  11-bit comparator greater                             : 3
-# Multiplexers                                         : 36
+# Multiplexers                                         : 38
  1-bit 2-to-1 multiplexer                              : 23
- 1-bit 40-to-1 multiplexer                             : 1
  10-bit 2-to-1 multiplexer                             : 1
  18-bit 2-to-1 multiplexer                             : 1
+ 2-bit 40-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 9
- 40-bit 30-to-1 multiplexer                            : 1
-# FSMs                                                 : 3
+ 40-bit 30-to-1 multiplexer                            : 2
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 4
 
 =========================================================================
 
@@ -1885,10 +1921,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <color_0> in Unit <vga_inst> is equivalent to the following 4 FFs/Latches, which will be removed : <color_1> <color_5> <color_6> <color_7> 
-INFO:Xst:2261 - The FF/Latch <color_2> in Unit <vga_inst> is equivalent to the following 2 FFs/Latches, which will be removed : <color_3> <color_4> 
-WARNING:Xst:1710 - FF/Latch <color_0> (without init value) has a constant value of 0 in block <vga_inst>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2404 -  FFs/Latches <color<7:5>> (without init value) have a constant value of 0 in block <vga_top>.
 
 Synthesizing (advanced) Unit <counter_1>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
@@ -1916,37 +1948,50 @@ INFO:Xst:3231 - The small RAM <Mram_cathode_o> will be implemented on LUTs in or
     -----------------------------------------------------------------------
 Unit <seg7> synthesized (advanced).
 
+Synthesizing (advanced) Unit <vga_top>.
+INFO:Xst:3231 - The small RAM <Mram_curr_bit[1]_GND_48_o_wide_mux_5_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <curr_bit>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <vga_top> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
  16x7-bit single-port distributed Read Only RAM        : 1
+ 4x8-bit single-port distributed Read Only RAM         : 1
 # Counters                                             : 3
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
  18-bit up counter                                     : 1
-# Registers                                            : 1328
- Flip-Flops                                            : 1328
+# Registers                                            : 2550
+ Flip-Flops                                            : 2550
 # Comparators                                          : 6
  10-bit comparator greater                             : 3
  11-bit comparator greater                             : 3
-# Multiplexers                                         : 35
+# Multiplexers                                         : 37
  1-bit 2-to-1 multiplexer                              : 23
- 1-bit 40-to-1 multiplexer                             : 1
  10-bit 2-to-1 multiplexer                             : 1
+ 2-bit 40-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 9
- 40-bit 30-to-1 multiplexer                            : 1
-# FSMs                                                 : 3
+ 40-bit 30-to-1 multiplexer                            : 2
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 4
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <color_0> (without init value) has a constant value of 0 in block <vga_top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <color_1> (without init value) has a constant value of 0 in block <vga_top>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <color_2> in Unit <vga_top> is equivalent to the following 2 FFs/Latches, which will be removed : <color_3> <color_4> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_1> on signal <state[1:3]> with one-hot encoding.
 -------------------
@@ -1984,6 +2029,19 @@ Optimizing FSM <ps2_inst/Inst_TopModul/s7/FSM_3> on signal <anode[1:2]> with gra
  1101  | 11
  1110  | 10
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Inst_LED_Control/FSM_4> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ s0    | 00
+ s1    | 01
+ s2    | 10
+-------------------
+WARNING:Xst:1710 - FF/Latch <color_0> (without init value) has a constant value of 0 in block <vga_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <color_1> (without init value) has a constant value of 0 in block <vga_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <color_2> in Unit <vga_top> is equivalent to the following 2 FFs/Latches, which will be removed : <color_3> <color_4> 
+INFO:Xst:2261 - The FF/Latch <color_5> in Unit <vga_top> is equivalent to the following 2 FFs/Latches, which will be removed : <color_6> <color_7> 
 
 Optimizing unit <shiftReg> ...
 
@@ -1997,11 +2055,11 @@ Optimizing unit <seg7> ...
 
 Optimizing unit <vga_top> ...
 
-Optimizing unit <RAM32x40> ...
-
 Optimizing unit <hsync> ...
 
 Optimizing unit <vsync> ...
+
+Optimizing unit <LED_Control> ...
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
@@ -2011,7 +2069,7 @@ WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value o
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block snake_top, actual ratio is 4.
+Found area constraint ratio of 100 (+ 5) on block snake_top, actual ratio is 6.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
@@ -2022,8 +2080,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1379
- Flip-Flops                                            : 1379
+# Registers                                            : 2601
+ Flip-Flops                                            : 2601
 
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
@@ -2048,27 +2106,27 @@ Top Level Output File Name         : snake_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2057
+# BELS                             : 2516
 #      GND                         : 1
-#      INV                         : 3
+#      INV                         : 4
 #      LUT1                        : 36
-#      LUT2                        : 9
-#      LUT3                        : 57
-#      LUT4                        : 38
-#      LUT5                        : 1236
-#      LUT6                        : 452
+#      LUT2                        : 10
+#      LUT3                        : 1297
+#      LUT4                        : 40
+#      LUT5                        : 34
+#      LUT6                        : 826
 #      LUT6_2                      : 50
 #      MUXCY                       : 65
-#      MUXF7                       : 42
-#      MUXF8                       : 1
+#      MUXF7                       : 84
+#      MUXF8                       : 2
 #      VCC                         : 1
 #      XORCY                       : 66
-# FlipFlops/Latches                : 1379
-#      FD                          : 1256
+# FlipFlops/Latches                : 2601
+#      FD                          : 54
 #      FDC                         : 19
-#      FDE                         : 23
-#      FDR                         : 44
-#      FDRE                        : 35
+#      FDE                         : 2427
+#      FDR                         : 48
+#      FDRE                        : 51
 #      FDS                         : 2
 # RAMS                             : 7
 #      RAM32M                      : 4
@@ -2076,10 +2134,10 @@ Primitive and Black Box Usage:
 #      RAMB18E1                    : 1
 # Clock Buffers                    : 2
 #      BUFG                        : 2
-# IO Buffers                       : 25
+# IO Buffers                       : 41
 #      IBUF                        : 3
 #      IBUFG                       : 1
-#      OBUF                        : 21
+#      OBUF                        : 37
 # Others                           : 1
 #      MMCME2_ADV                  : 1
 
@@ -2090,22 +2148,22 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1379  out of  126800     1%  
- Number of Slice LUTs:                 1905  out of  63400     3%  
-    Number used as Logic:              1881  out of  63400     2%  
+ Number of Slice Registers:            2601  out of  126800     2%  
+ Number of Slice LUTs:                 2321  out of  63400     3%  
+    Number used as Logic:              2297  out of  63400     3%  
     Number used as Memory:               24  out of  19000     0%  
        Number used as RAM:               24
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2006
-   Number with an unused Flip Flop:     627  out of   2006    31%  
-   Number with an unused LUT:           101  out of   2006     5%  
-   Number of fully used LUT-FF pairs:  1278  out of   2006    63%  
-   Number of unique control sets:        16
+ Number of LUT Flip Flop pairs used:   4793
+   Number with an unused Flip Flop:    2192  out of   4793    45%  
+   Number with an unused LUT:          2472  out of   4793    51%  
+   Number of fully used LUT-FF pairs:   129  out of   4793     2%  
+   Number of unique control sets:      1219
 
 IO Utilization: 
- Number of IOs:                          25
- Number of bonded IOBs:                  25  out of    210    11%  
+ Number of IOs:                          41
+ Number of bonded IOBs:                  41  out of    210    19%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    135     0%  
@@ -2133,7 +2191,7 @@ Clock Information:
 -----------------------------------+----------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                              | Load  |
 -----------------------------------+----------------------------------------------------+-------+
-clkgen_inst/clkout0                | BUFG                                               | 1386  |
+clkgen_inst/clkout0                | BUFG                                               | 2608  |
 kcpsm_sleep                        | NONE(Inst_firmware/ram_1k_generate.akv7.kcpsm6_rom)| 1     |
 -----------------------------------+----------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -2147,7 +2205,7 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: 7.761ns (Maximum Frequency: 128.849MHz)
-   Minimum input arrival time before clock: 1.950ns
+   Minimum input arrival time before clock: 1.954ns
    Maximum output required time after clock: 2.867ns
    Maximum combinational path delay: 0.001ns
 
@@ -2158,7 +2216,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkgen_inst/clkout0'
   Clock period: 7.761ns (frequency: 128.849MHz)
-  Total number of paths / destination ports: 32443 / 1580
+  Total number of paths / destination ports: 49112 / 5220
 -------------------------------------------------------------------------
 Delay:               7.761ns (Levels of Logic = 9)
   Source:            Inst_firmware/ram_1k_generate.akv7.kcpsm6_rom (RAM)
@@ -2208,9 +2266,9 @@ Delay:               3.590ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clkgen_inst/clkout0'
-  Total number of paths / destination ports: 65 / 65
+  Total number of paths / destination ports: 86 / 86
 -------------------------------------------------------------------------
-Offset:              1.950ns (Levels of Logic = 2)
+Offset:              1.954ns (Levels of Logic = 2)
   Source:            reset_i (PAD)
   Destination:       vga_inst/Inst_vsync/cnt/count_9 (FF)
   Destination Clock: clkgen_inst/clkout0 rising
@@ -2219,16 +2277,16 @@ Offset:              1.950ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            51   0.001   0.873  reset_i_IBUF (reset_i_IBUF)
+     IBUF:I->O            71   0.001   0.877  reset_i_IBUF (reset_i_IBUF)
      LUT4:I1->O           10   0.124   0.458  vga_inst/Inst_vsync/cnt/_n00223 (vga_inst/Inst_vsync/cnt/_n0022)
      FDRE:R                    0.494          vga_inst/Inst_vsync/cnt/count_0
     ----------------------------------------
-    Total                      1.950ns (0.619ns logic, 1.331ns route)
+    Total                      1.954ns (0.619ns logic, 1.335ns route)
                                        (31.7% logic, 68.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clkgen_inst/clkout0'
-  Total number of paths / destination ports: 54 / 16
+  Total number of paths / destination ports: 73 / 35
 -------------------------------------------------------------------------
 Offset:              2.867ns (Levels of Logic = 3)
   Source:            vga_inst/Inst_hsync/cnt/count_5 (FF)
@@ -2289,14 +2347,14 @@ kcpsm_sleep    |    3.590|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 63.00 secs
-Total CPU time to Xst completion: 62.81 secs
+Total REAL time to Xst completion: 75.00 secs
+Total CPU time to Xst completion: 75.24 secs
  
 --> 
 
-Total memory usage is 567024 kilobytes
+Total memory usage is 568344 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   15 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
 Number of infos    :    7 (   0 filtered)
 

@@ -39,10 +39,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   2
 
-Total memory usage is 380420 kilobytes
+Total memory usage is 380464 kilobytes
 
 Writing NGD file "snake_top.ngd" ...
-Total REAL time to NGDBUILD completion:  22 sec
-Total CPU time to NGDBUILD completion:   22 sec
+Total REAL time to NGDBUILD completion:  24 sec
+Total CPU time to NGDBUILD completion:   24 sec
 
 Writing NGDBUILD log file "snake_top.bld"...

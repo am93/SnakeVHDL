@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-01-16T12:19:19</DateModified>
+  <DateModified>2015-01-31T16:39:04</DateModified>
   <ModuleName>snake_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey/iseconfig/snake_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey\</ImplementationReportsDirectory>
   <DateInitialized>2015-01-16T11:28:59</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
