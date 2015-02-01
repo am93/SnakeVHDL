@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.34 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.35 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.34 secs
  
 --> Reading design: snake_top.prj
 
@@ -160,6 +160,9 @@ Parsing entity <firmware>.
 Parsing architecture <low_level_definition> of entity <firmware>.
 Parsing entity <jtag_loader_6>.
 Parsing architecture <Behavioral> of entity <jtag_loader_6>.
+Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd" into library work
+Parsing entity <ColorLEDControl>.
+Parsing architecture <Behavioral> of entity <colorledcontrol>.
 Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" into library work
 Parsing entity <snake_top>.
 Parsing architecture <Behavioral> of entity <snake_top>.
@@ -207,14 +210,17 @@ Elaborating entity <kcpsm6> (architecture <low_level_definition>) with generics 
 Elaborating entity <LED_Control> (architecture <Behavioral>) from library <work>.
 INFO:HDLCompiler:679 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\LED_Control.vhd" Line 139. Case statement is complete. others clause is never selected
 
+Elaborating entity <ColorLEDControl> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd" Line 90: colorled should be on the sensitivity list of the process
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <snake_top>.
     Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd".
-INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 206: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 206: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <resetLED>.
     Found 2-bit register for signal <data>.
     Found 6-bit register for signal <column>.
@@ -1880,6 +1886,19 @@ Synthesizing Unit <LED_Control>.
 	inferred   1 Finite State Machine(s).
 Unit <LED_Control> synthesized.
 
+Synthesizing Unit <ColorLEDControl>.
+    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd".
+    Found 15-bit register for signal <counter>.
+    Found 2-bit register for signal <colorLED>.
+    Found 15-bit adder for signal <counter[14]_GND_83_o_add_23_OUT> created at line 109.
+    Found 16-bit comparator lessequal for signal <GND_83_o_highTime[15]_LessThan_20_o> created at line 97
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <ColorLEDControl> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
@@ -1887,28 +1906,33 @@ Macro Statistics
 # RAMs                                                 : 2
  16x7-bit single-port Read Only RAM                    : 1
  4x8-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 3
+# Adders/Subtractors                                   : 4
  10-bit adder                                          : 1
  11-bit adder                                          : 1
+ 15-bit adder                                          : 1
  18-bit adder                                          : 1
-# Registers                                            : 2421
+# Registers                                            : 2423
  1-bit register                                        : 2409
  10-bit register                                       : 1
  11-bit register                                       : 1
+ 15-bit register                                       : 1
  16-bit register                                       : 1
  18-bit register                                       : 1
- 2-bit register                                        : 2
+ 2-bit register                                        : 3
  4-bit register                                        : 1
  5-bit register                                        : 1
  6-bit register                                        : 1
  8-bit register                                        : 2
  9-bit register                                        : 1
-# Comparators                                          : 6
+# Comparators                                          : 7
  10-bit comparator greater                             : 3
  11-bit comparator greater                             : 3
-# Multiplexers                                         : 38
+ 16-bit comparator lessequal                           : 1
+# Multiplexers                                         : 40
  1-bit 2-to-1 multiplexer                              : 23
  10-bit 2-to-1 multiplexer                             : 1
+ 15-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 1
  18-bit 2-to-1 multiplexer                             : 1
  2-bit 40-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 9
@@ -1922,6 +1946,11 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1710 - FF/Latch <colorLED_0> (without init value) has a constant value of 0 in block <Inst_ColorLEDControl>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <ColorLEDControl>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <ColorLEDControl> synthesized (advanced).
 
 Synthesizing (advanced) Unit <counter_1>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
@@ -1970,18 +1999,21 @@ Macro Statistics
 # RAMs                                                 : 2
  16x7-bit single-port distributed Read Only RAM        : 1
  4x8-bit single-port distributed Read Only RAM         : 1
-# Counters                                             : 3
+# Counters                                             : 4
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
+ 15-bit up counter                                     : 1
  18-bit up counter                                     : 1
-# Registers                                            : 2551
- Flip-Flops                                            : 2551
-# Comparators                                          : 6
+# Registers                                            : 2553
+ Flip-Flops                                            : 2553
+# Comparators                                          : 7
  10-bit comparator greater                             : 3
  11-bit comparator greater                             : 3
-# Multiplexers                                         : 37
+ 16-bit comparator lessequal                           : 1
+# Multiplexers                                         : 38
  1-bit 2-to-1 multiplexer                              : 23
  10-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 1
  2-bit 40-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 9
  40-bit 30-to-1 multiplexer                            : 2
@@ -1993,6 +2025,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <colorLED_0> (without init value) has a constant value of 0 in block <ColorLEDControl>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_1> on signal <state[1:3]> with one-hot encoding.
 -------------------
@@ -2070,6 +2103,8 @@ Optimizing unit <hsync> ...
 Optimizing unit <vsync> ...
 
 Optimizing unit <LED_Control> ...
+
+Optimizing unit <ColorLEDControl> ...
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
@@ -2090,8 +2125,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2604
- Flip-Flops                                            : 2604
+# Registers                                            : 2620
+ Flip-Flops                                            : 2620
 
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <Inst_kcpsm6/sync_sleep_flop> has a constant value of 0 in block <snake_top>. This FF/Latch will be trimmed during the optimization process.
@@ -2116,24 +2151,24 @@ Top Level Output File Name         : snake_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2521
+# BELS                             : 2611
 #      GND                         : 1
-#      INV                         : 4
-#      LUT1                        : 36
+#      INV                         : 5
+#      LUT1                        : 50
 #      LUT2                        : 11
-#      LUT3                        : 1297
-#      LUT4                        : 39
-#      LUT5                        : 39
-#      LUT6                        : 826
+#      LUT3                        : 1303
+#      LUT4                        : 47
+#      LUT5                        : 43
+#      LUT6                        : 854
 #      LUT6_2                      : 50
-#      MUXCY                       : 65
+#      MUXCY                       : 79
 #      MUXF7                       : 84
 #      MUXF8                       : 2
 #      VCC                         : 1
-#      XORCY                       : 66
-# FlipFlops/Latches                : 2604
-#      FD                          : 57
-#      FDC                         : 19
+#      XORCY                       : 81
+# FlipFlops/Latches                : 2620
+#      FD                          : 58
+#      FDC                         : 34
 #      FDE                         : 2427
 #      FDR                         : 47
 #      FDRE                        : 51
@@ -2144,10 +2179,10 @@ Primitive and Black Box Usage:
 #      RAMB18E1                    : 1
 # Clock Buffers                    : 2
 #      BUFG                        : 2
-# IO Buffers                       : 41
+# IO Buffers                       : 43
 #      IBUF                        : 3
 #      IBUFG                       : 1
-#      OBUF                        : 37
+#      OBUF                        : 39
 # Others                           : 1
 #      MMCME2_ADV                  : 1
 
@@ -2158,22 +2193,22 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2604  out of  126800     2%  
- Number of Slice LUTs:                 2326  out of  63400     3%  
-    Number used as Logic:              2302  out of  63400     3%  
+ Number of Slice Registers:            2620  out of  126800     2%  
+ Number of Slice LUTs:                 2387  out of  63400     3%  
+    Number used as Logic:              2363  out of  63400     3%  
     Number used as Memory:               24  out of  19000     0%  
        Number used as RAM:               24
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4798
-   Number with an unused Flip Flop:    2194  out of   4798    45%  
-   Number with an unused LUT:          2472  out of   4798    51%  
-   Number of fully used LUT-FF pairs:   132  out of   4798     2%  
+ Number of LUT Flip Flop pairs used:   4859
+   Number with an unused Flip Flop:    2239  out of   4859    46%  
+   Number with an unused LUT:          2472  out of   4859    50%  
+   Number of fully used LUT-FF pairs:   148  out of   4859     3%  
    Number of unique control sets:      1219
 
 IO Utilization: 
- Number of IOs:                          41
- Number of bonded IOBs:                  41  out of    210    19%  
+ Number of IOs:                          43
+ Number of bonded IOBs:                  43  out of    210    20%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    135     0%  
@@ -2201,7 +2236,7 @@ Clock Information:
 -----------------------------------+----------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                              | Load  |
 -----------------------------------+----------------------------------------------------+-------+
-clkgen_inst/clkout0                | BUFG                                               | 2611  |
+clkgen_inst/clkout0                | BUFG                                               | 2627  |
 kcpsm_sleep                        | NONE(Inst_firmware/ram_1k_generate.akv7.kcpsm6_rom)| 1     |
 -----------------------------------+----------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -2215,7 +2250,7 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: 7.761ns (Maximum Frequency: 128.849MHz)
-   Minimum input arrival time before clock: 1.951ns
+   Minimum input arrival time before clock: 4.640ns
    Maximum output required time after clock: 2.867ns
    Maximum combinational path delay: 0.001ns
 
@@ -2226,7 +2261,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkgen_inst/clkout0'
   Clock period: 7.761ns (frequency: 128.849MHz)
-  Total number of paths / destination ports: 49315 / 5239
+  Total number of paths / destination ports: 49806 / 5255
 -------------------------------------------------------------------------
 Delay:               7.761ns (Levels of Logic = 9)
   Source:            Inst_firmware/ram_1k_generate.akv7.kcpsm6_rom (RAM)
@@ -2276,27 +2311,31 @@ Delay:               3.590ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clkgen_inst/clkout0'
-  Total number of paths / destination ports: 88 / 88
+  Total number of paths / destination ports: 112 / 104
 -------------------------------------------------------------------------
-Offset:              1.951ns (Levels of Logic = 2)
+Offset:              4.640ns (Levels of Logic = 6)
   Source:            reset_i (PAD)
-  Destination:       vga_inst/Inst_vsync/cnt/count_9 (FF)
+  Destination:       Inst_ColorLEDControl/colorLED_1 (FF)
   Destination Clock: clkgen_inst/clkout0 rising
 
-  Data Path: reset_i to vga_inst/Inst_vsync/cnt/count_9
+  Data Path: reset_i to Inst_ColorLEDControl/colorLED_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            58   0.001   0.874  reset_i_IBUF (reset_i_IBUF)
-     LUT4:I1->O           10   0.124   0.458  vga_inst/Inst_vsync/cnt/_n00223 (vga_inst/Inst_vsync/cnt/_n0022)
-     FDRE:R                    0.494          vga_inst/Inst_vsync/cnt/count_0
+     IBUF:I->O            78   0.001   0.879  reset_i_IBUF (reset_i_IBUF)
+     LUT6:I3->O            1   0.124   0.939  Inst_ColorLEDControl/Mmux_highTime31 (Inst_ColorLEDControl/Mmux_highTime3)
+     LUT6:I0->O            1   0.124   0.919  Inst_ColorLEDControl/Mmux_highTime35 (Inst_ColorLEDControl/highTime<12>)
+     LUT6:I1->O            1   0.124   0.536  Inst_ColorLEDControl/_n00506 (Inst_ColorLEDControl/_n00506)
+     LUT6:I4->O            1   0.124   0.716  Inst_ColorLEDControl/_n00507 (Inst_ColorLEDControl/_n0050)
+     LUT3:I0->O            1   0.124   0.000  Inst_ColorLEDControl/colorLED_1_rstpot1 (Inst_ColorLEDControl/colorLED_1_rstpot1)
+     FD:D                      0.030          Inst_ColorLEDControl/colorLED_1
     ----------------------------------------
-    Total                      1.951ns (0.619ns logic, 1.332ns route)
-                                       (31.7% logic, 68.3% route)
+    Total                      4.640ns (0.651ns logic, 3.989ns route)
+                                       (14.0% logic, 86.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clkgen_inst/clkout0'
-  Total number of paths / destination ports: 73 / 35
+  Total number of paths / destination ports: 74 / 36
 -------------------------------------------------------------------------
 Offset:              2.867ns (Levels of Logic = 3)
   Source:            vga_inst/Inst_hsync/cnt/count_5 (FF)
@@ -2357,14 +2396,14 @@ kcpsm_sleep    |    3.590|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 76.00 secs
-Total CPU time to Xst completion: 76.00 secs
+Total REAL time to Xst completion: 85.00 secs
+Total CPU time to Xst completion: 84.67 secs
  
 --> 
 
-Total memory usage is 568432 kilobytes
+Total memory usage is 568456 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
+Number of warnings :   16 (   0 filtered)
 Number of infos    :    7 (   0 filtered)
 

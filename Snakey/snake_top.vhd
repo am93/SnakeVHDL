@@ -41,7 +41,8 @@ entity snake_top is
            blue_o : out  STD_LOGIC_VECTOR (1 downto 0);
 			  cathode_o : out STD_LOGIC_VECTOR (0 to 6);
 			  anode_o : out STD_LOGIC_VECTOR (3 downto 0);
-			  led_o : out STD_LOGIC_VECTOR(15 downto 0)
+			  led_o : out STD_LOGIC_VECTOR(15 downto 0);
+			  colorLED_o : out  STD_LOGIC_VECTOR (1 downto 0)
 			  );
 end snake_top;
 
@@ -122,6 +123,15 @@ architecture Behavioral of snake_top is
 		);
 	END COMPONENT;
 	
+	COMPONENT ColorLEDControl
+	PORT(
+		clk_i : IN std_logic;
+		rst_i : IN std_logic;
+		data_i : IN std_logic_vector(15 downto 0);          
+		colorLED_o : OUT std_logic_vector(1 downto 0)
+		);
+	END COMPONENT;
+	
 	-- interna ura (50MHz)
 	signal clk_i:				std_logic;
 	
@@ -153,7 +163,13 @@ architecture Behavioral of snake_top is
 	-- signali za LED kontroler
 	signal resetLED : 		std_logic;
 	
+	-- interni signal za prenos stevila ledic
+	signal internalLED :		std_logic_vector(15 downto 0);
+	
 begin
+	-- interni signal vezan na output
+	led_o <= internalLED;
+
    -- signala za kcpsm
 	kcpsm_sleep <= '0';
 	
@@ -220,12 +236,21 @@ begin
 		clk => clk_i
 	);
 	
+	-- kontrola ledic pojedene hrane
 	Inst_LED_Control: LED_Control PORT MAP(
 		clk_i => clk_i,
 		rst_i => reset_i,
-		enable_i => data,
-		ledRst_i => resetLED,
-		led_o => led_o
+		enable_i => data,		 -- signal za povecanje stevila ledic
+		ledRst_i => resetLED, -- signal za resetiranje ledic
+		led_o => internalLED  -- vezan tudi na output (stevilo ledic)
+	);
+	
+	-- kontrola barvnih ledic
+	Inst_ColorLEDControl: ColorLEDControl PORT MAP(
+		clk_i => clk_i,
+		rst_i => reset_i,
+		data_i => internalLED,		-- stevilo prizganih ledic
+		colorLED_o => colorLED_o	
 	);
 	
 	-- proces za prekinitve
