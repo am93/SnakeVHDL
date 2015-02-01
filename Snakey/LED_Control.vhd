@@ -33,27 +33,53 @@ entity LED_Control is
     Port ( clk_i : in  STD_LOGIC;
            rst_i : in  STD_LOGIC;
            enable_i : in  STD_LOGIC_VECTOR (1 downto 0);
+			  ledRst_i : in  STD_LOGIC;
            led_o : out  STD_LOGIC_VECTOR (15 downto 0));
 end LED_Control;
 
 architecture Behavioral of LED_Control is
+
 	-- signali za pomnilno celico LED
 	signal led : STD_LOGIC_VECTOR(15 downto 0);
 	signal insert : STD_LOGIC;
+	
 	-- signali za avtomat
 	type state_type is (s0,s1,s2); 
    signal state, next_state : state_type; 
 	signal pulse : std_logic;  					
 	signal sig   : std_logic_vector(1 downto 0); 
+	
+	-- signali za avtomat resetiranje stevila ledic
+	signal pulseRst : std_logic;  					
+	
+	-- negedge za resetiranje
+	COMPONENT negedge
+	PORT(
+		clk_i : IN std_logic;
+		rst_i : IN std_logic;
+		sig_i : IN std_logic;          
+		pulse_o : OUT std_logic
+		);
+	END COMPONENT;
+	
 begin
+	
+	-- instanca negedge za resteiranje ledic
+	Inst_negedge_rst: negedge PORT MAP(
+		clk_i => clk_i,
+		rst_i => rst_i,
+		sig_i => ledRst_i,
+		pulse_o => pulseRst
+	);
 
+	-- notranja signala za ledice
 	sig <= enable_i;
 	led_o <= led;
 
 	process (clk_i)
 	begin
 		if clk_i'event and clk_i='1' then  
-			if rst_i='1' then   
+			if rst_i='1' or pulseRst ='1' then   
 				led <= (others => '0');
 				insert <= '0';
 			else
@@ -68,6 +94,7 @@ begin
 		end if;
 		
 	end process;
+	
 	
 	-------- A V T O M A T ----------
 
@@ -113,6 +140,8 @@ begin
             next_state <= state;
       end case;      
    end process;
+	
+
 
 
 end Behavioral;

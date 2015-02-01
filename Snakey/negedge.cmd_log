@@ -1,0 +1,1 @@
+vhdtdtfi -prj Snakey -o C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey/negedge.vhi -module negedge -template C:/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work negedge.vhd 

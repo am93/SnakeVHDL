@@ -116,7 +116,8 @@ architecture Behavioral of snake_top is
 	PORT(
 		clk_i : IN std_logic;
 		rst_i : IN std_logic;
-		enable_i : IN std_logic_vector(1 downto 0);          
+		enable_i : IN std_logic_vector(1 downto 0);
+		ledRst_i : in  STD_LOGIC;		
 		led_o : OUT std_logic_vector(15 downto 0)
 		);
 	END COMPONENT;
@@ -147,7 +148,10 @@ architecture Behavioral of snake_top is
 	signal kcpsm_rstrobe:	std_logic;
 	signal kcpsm_wstrobe:	std_logic;
 	signal kcpsm_sleep:		std_logic;
-	signal kcpsm_kwstr:	std_logic;
+	signal kcpsm_kwstr:		std_logic;
+	
+	-- signali za LED kontroler
+	signal resetLED : 		std_logic;
 	
 begin
    -- signala za kcpsm
@@ -220,6 +224,7 @@ begin
 		clk_i => clk_i,
 		rst_i => reset_i,
 		enable_i => data,
+		ledRst_i => resetLED,
 		led_o => led_o
 	);
 	
@@ -246,6 +251,7 @@ begin
 			-- assembler pise v VHDL
 			if(kcpsm_wstrobe = '1') then
 				-- ohrani vrednosti
+				resetLED <= resetLED;
 				data <= data;
 				column <= column;
 				row <= row;
@@ -256,6 +262,8 @@ begin
 						row <= kcpsm_outport(4 downto 0);
 					when X"01" =>
 						column <= kcpsm_outport(5 downto 0);
+					when X"04" =>
+						resetLED <= kcpsm_outport(0);
 					when others =>
 						data <= kcpsm_outport(1 downto 0);
 						write_enable <= '1';						

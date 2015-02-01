@@ -16,14 +16,14 @@ start:      CALL clear			; pobrisemo zaslon
 			LOAD sE, 25			; food row
 			LOAD sF, C6 		; food column
 			
+			OUTPUT s7, 04		; signal za reset LEDic na 0
 			OUTPUT sE, 00		; hrana v VHDL 
 			OUTPUT sF, 01		; hrana v VHDL
 			OUTPUT s6, 02		; barva hrane v VHDL
 			
 			LOAD s5, 04			; dolzina kace
 			LOAD s9, s5			; kopija dolzine kace za stevec
-
-
+			
 init:		SUB s4, 01			; zmanjsaj stolpec
 			STORE s3, (s8)		; shrani vrstico
 			ADD s8, 01			; povecaj offset
@@ -190,8 +190,8 @@ lfsr:			LOAD sB, sE
 				AND sA, 1F
 				COMPARE sA, 1D
 				JUMP C, row
-				LOAD sA, 1C
-	row:		OUTPUT sA, 00
+				LOAD sE, 15      ;sA 1C
+	row:		OUTPUT sE, 00	 ;sA
 				LOAD sB, sF
 				AND sB, 01
 				COMPARE sB, 00
@@ -202,8 +202,8 @@ lfsr:			LOAD sB, sE
 				AND sA, 3F
 				COMPARE sA, 28
 				JUMP C, col
-				LOAD sA, 27
-	col:		OUTPUT sA, 01				
+				LOAD sF, 15		; sA 27
+	col:		OUTPUT sF, 01	; sA			
 				OUTPUT s6, 02
 				RETURN
 	
@@ -254,6 +254,7 @@ clear:		LOAD s4, 28
 			
 			COMPARE s4, 00
 			JUMP NZ, loop1
+			OUTPUT s6, 04
 			RETURN
 	
 delay_1us: 
