@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.68d on Mon Feb 02 12:25:20 2015
+// Written by: Map P.68d on Mon Feb 02 12:50:15 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -21,6 +21,7 @@ COMP "red_o<1>" LOCATE = SITE "B4" LEVEL 1;
 COMP "red_o<2>" LOCATE = SITE "C5" LEVEL 1;
 COMP "led_o<9>" LOCATE = SITE "U3" LEVEL 1;
 COMP "kbddata_i" LOCATE = SITE "B2" LEVEL 1;
+COMP "sw_i" LOCATE = SITE "U9" LEVEL 1;
 COMP "clk_m" LOCATE = SITE "E3" LEVEL 1;
 COMP "vsync_o" LOCATE = SITE "B12" LEVEL 1;
 COMP "anode_o<2>" LOCATE = SITE "M3" LEVEL 1;
@@ -97,25 +98,6 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "ps2_inst/Inst_TopModul/s7/num_2" BEL
         "ps2_inst/Inst_TopModul/s7/num_1" BEL
         "ps2_inst/Inst_TopModul/s7/num_0" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2173" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2169" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2171" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2175" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2177" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2183" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2179" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2181" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2185" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2187" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2193" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2189" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2191" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2195" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2197" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2199" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2201" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2203" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2205" BEL
         "vga_inst/Inst_RAM30x40_first/_o2211" BEL
         "vga_inst/Inst_RAM30x40_first/_o2207" BEL
         "vga_inst/Inst_RAM30x40_first/_o2209" BEL
@@ -235,27 +217,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o2437" BEL
         "vga_inst/Inst_RAM30x40_first/_o2441" BEL
         "vga_inst/Inst_RAM30x40_first/_o2443" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2449" BEL
         "vga_inst/Inst_RAM30x40_first/_o2445" BEL
         "vga_inst/Inst_RAM30x40_first/_o2447" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2449" BEL
         "vga_inst/Inst_RAM30x40_first/_o2451" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2457" BEL
         "vga_inst/Inst_RAM30x40_first/_o2453" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2455" BEL
         "vga_inst/Inst_RAM30x40_first/_o2459" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2455" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2457" BEL
         "vga_inst/Inst_RAM30x40_first/_o2461" BEL
         "vga_inst/Inst_RAM30x40_first/_o2463" BEL
         "vga_inst/Inst_RAM30x40_first/_o2465" BEL
         "vga_inst/Inst_RAM30x40_first/_o2467" BEL
         "vga_inst/Inst_RAM30x40_first/_o2469" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2475" BEL
         "vga_inst/Inst_RAM30x40_first/_o2471" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2473" BEL
         "vga_inst/Inst_RAM30x40_first/_o2477" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2473" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2475" BEL
         "vga_inst/Inst_RAM30x40_first/_o2479" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2485" BEL
         "vga_inst/Inst_RAM30x40_first/_o2481" BEL
         "vga_inst/Inst_RAM30x40_first/_o2483" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2485" BEL
         "vga_inst/Inst_RAM30x40_first/_o2487" BEL
         "vga_inst/Inst_RAM30x40_first/_o2489" BEL
         "vga_inst/Inst_RAM30x40_first/_o2495" BEL
@@ -310,27 +292,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o2587" BEL
         "vga_inst/Inst_RAM30x40_first/_o2591" BEL
         "vga_inst/Inst_RAM30x40_first/_o2593" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2599" BEL
         "vga_inst/Inst_RAM30x40_first/_o2595" BEL
         "vga_inst/Inst_RAM30x40_first/_o2597" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2599" BEL
         "vga_inst/Inst_RAM30x40_first/_o2601" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2607" BEL
         "vga_inst/Inst_RAM30x40_first/_o2603" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2605" BEL
         "vga_inst/Inst_RAM30x40_first/_o2609" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2605" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2607" BEL
         "vga_inst/Inst_RAM30x40_first/_o2611" BEL
         "vga_inst/Inst_RAM30x40_first/_o2613" BEL
         "vga_inst/Inst_RAM30x40_first/_o2615" BEL
         "vga_inst/Inst_RAM30x40_first/_o2617" BEL
         "vga_inst/Inst_RAM30x40_first/_o2619" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2625" BEL
         "vga_inst/Inst_RAM30x40_first/_o2621" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2623" BEL
         "vga_inst/Inst_RAM30x40_first/_o2627" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2623" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2625" BEL
         "vga_inst/Inst_RAM30x40_first/_o2629" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2635" BEL
         "vga_inst/Inst_RAM30x40_first/_o2631" BEL
         "vga_inst/Inst_RAM30x40_first/_o2633" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2635" BEL
         "vga_inst/Inst_RAM30x40_first/_o2637" BEL
         "vga_inst/Inst_RAM30x40_first/_o2639" BEL
         "vga_inst/Inst_RAM30x40_first/_o2645" BEL
@@ -385,27 +367,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o2737" BEL
         "vga_inst/Inst_RAM30x40_first/_o2741" BEL
         "vga_inst/Inst_RAM30x40_first/_o2743" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2749" BEL
         "vga_inst/Inst_RAM30x40_first/_o2745" BEL
         "vga_inst/Inst_RAM30x40_first/_o2747" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2749" BEL
         "vga_inst/Inst_RAM30x40_first/_o2751" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2757" BEL
         "vga_inst/Inst_RAM30x40_first/_o2753" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2755" BEL
         "vga_inst/Inst_RAM30x40_first/_o2759" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2755" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2757" BEL
         "vga_inst/Inst_RAM30x40_first/_o2761" BEL
         "vga_inst/Inst_RAM30x40_first/_o2763" BEL
         "vga_inst/Inst_RAM30x40_first/_o2765" BEL
         "vga_inst/Inst_RAM30x40_first/_o2767" BEL
         "vga_inst/Inst_RAM30x40_first/_o2769" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2775" BEL
         "vga_inst/Inst_RAM30x40_first/_o2771" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2773" BEL
         "vga_inst/Inst_RAM30x40_first/_o2777" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2773" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2775" BEL
         "vga_inst/Inst_RAM30x40_first/_o2779" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2785" BEL
         "vga_inst/Inst_RAM30x40_first/_o2781" BEL
         "vga_inst/Inst_RAM30x40_first/_o2783" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2785" BEL
         "vga_inst/Inst_RAM30x40_first/_o2787" BEL
         "vga_inst/Inst_RAM30x40_first/_o2789" BEL
         "vga_inst/Inst_RAM30x40_first/_o2795" BEL
@@ -460,27 +442,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o2887" BEL
         "vga_inst/Inst_RAM30x40_first/_o2891" BEL
         "vga_inst/Inst_RAM30x40_first/_o2893" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2899" BEL
         "vga_inst/Inst_RAM30x40_first/_o2895" BEL
         "vga_inst/Inst_RAM30x40_first/_o2897" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2899" BEL
         "vga_inst/Inst_RAM30x40_first/_o2901" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2907" BEL
         "vga_inst/Inst_RAM30x40_first/_o2903" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2905" BEL
         "vga_inst/Inst_RAM30x40_first/_o2909" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2905" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2907" BEL
         "vga_inst/Inst_RAM30x40_first/_o2911" BEL
         "vga_inst/Inst_RAM30x40_first/_o2913" BEL
         "vga_inst/Inst_RAM30x40_first/_o2915" BEL
         "vga_inst/Inst_RAM30x40_first/_o2917" BEL
         "vga_inst/Inst_RAM30x40_first/_o2919" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2925" BEL
         "vga_inst/Inst_RAM30x40_first/_o2921" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2923" BEL
         "vga_inst/Inst_RAM30x40_first/_o2927" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2923" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2925" BEL
         "vga_inst/Inst_RAM30x40_first/_o2929" BEL
-        "vga_inst/Inst_RAM30x40_first/_o2935" BEL
         "vga_inst/Inst_RAM30x40_first/_o2931" BEL
         "vga_inst/Inst_RAM30x40_first/_o2933" BEL
+        "vga_inst/Inst_RAM30x40_first/_o2935" BEL
         "vga_inst/Inst_RAM30x40_first/_o2937" BEL
         "vga_inst/Inst_RAM30x40_first/_o2939" BEL
         "vga_inst/Inst_RAM30x40_first/_o2945" BEL
@@ -535,27 +517,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o3037" BEL
         "vga_inst/Inst_RAM30x40_first/_o3041" BEL
         "vga_inst/Inst_RAM30x40_first/_o3043" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3049" BEL
         "vga_inst/Inst_RAM30x40_first/_o3045" BEL
         "vga_inst/Inst_RAM30x40_first/_o3047" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3049" BEL
         "vga_inst/Inst_RAM30x40_first/_o3051" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3057" BEL
         "vga_inst/Inst_RAM30x40_first/_o3053" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3055" BEL
         "vga_inst/Inst_RAM30x40_first/_o3059" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3055" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3057" BEL
         "vga_inst/Inst_RAM30x40_first/_o3061" BEL
         "vga_inst/Inst_RAM30x40_first/_o3063" BEL
         "vga_inst/Inst_RAM30x40_first/_o3065" BEL
         "vga_inst/Inst_RAM30x40_first/_o3067" BEL
         "vga_inst/Inst_RAM30x40_first/_o3069" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3075" BEL
         "vga_inst/Inst_RAM30x40_first/_o3071" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3073" BEL
         "vga_inst/Inst_RAM30x40_first/_o3077" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3073" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3075" BEL
         "vga_inst/Inst_RAM30x40_first/_o3079" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3085" BEL
         "vga_inst/Inst_RAM30x40_first/_o3081" BEL
         "vga_inst/Inst_RAM30x40_first/_o3083" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3085" BEL
         "vga_inst/Inst_RAM30x40_first/_o3087" BEL
         "vga_inst/Inst_RAM30x40_first/_o3089" BEL
         "vga_inst/Inst_RAM30x40_first/_o3095" BEL
@@ -610,27 +592,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o3187" BEL
         "vga_inst/Inst_RAM30x40_first/_o3191" BEL
         "vga_inst/Inst_RAM30x40_first/_o3193" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3199" BEL
         "vga_inst/Inst_RAM30x40_first/_o3195" BEL
         "vga_inst/Inst_RAM30x40_first/_o3197" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3199" BEL
         "vga_inst/Inst_RAM30x40_first/_o3201" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3207" BEL
         "vga_inst/Inst_RAM30x40_first/_o3203" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3205" BEL
         "vga_inst/Inst_RAM30x40_first/_o3209" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3205" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3207" BEL
         "vga_inst/Inst_RAM30x40_first/_o3211" BEL
         "vga_inst/Inst_RAM30x40_first/_o3213" BEL
         "vga_inst/Inst_RAM30x40_first/_o3215" BEL
         "vga_inst/Inst_RAM30x40_first/_o3217" BEL
         "vga_inst/Inst_RAM30x40_first/_o3219" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3225" BEL
         "vga_inst/Inst_RAM30x40_first/_o3221" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3223" BEL
         "vga_inst/Inst_RAM30x40_first/_o3227" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3223" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3225" BEL
         "vga_inst/Inst_RAM30x40_first/_o3229" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3235" BEL
         "vga_inst/Inst_RAM30x40_first/_o3231" BEL
         "vga_inst/Inst_RAM30x40_first/_o3233" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3235" BEL
         "vga_inst/Inst_RAM30x40_first/_o3237" BEL
         "vga_inst/Inst_RAM30x40_first/_o3239" BEL
         "vga_inst/Inst_RAM30x40_first/_o3245" BEL
@@ -685,27 +667,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o3337" BEL
         "vga_inst/Inst_RAM30x40_first/_o3341" BEL
         "vga_inst/Inst_RAM30x40_first/_o3343" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3349" BEL
         "vga_inst/Inst_RAM30x40_first/_o3345" BEL
         "vga_inst/Inst_RAM30x40_first/_o3347" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3349" BEL
         "vga_inst/Inst_RAM30x40_first/_o3351" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3357" BEL
         "vga_inst/Inst_RAM30x40_first/_o3353" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3355" BEL
         "vga_inst/Inst_RAM30x40_first/_o3359" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3355" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3357" BEL
         "vga_inst/Inst_RAM30x40_first/_o3361" BEL
         "vga_inst/Inst_RAM30x40_first/_o3363" BEL
         "vga_inst/Inst_RAM30x40_first/_o3365" BEL
         "vga_inst/Inst_RAM30x40_first/_o3367" BEL
         "vga_inst/Inst_RAM30x40_first/_o3369" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3375" BEL
         "vga_inst/Inst_RAM30x40_first/_o3371" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3373" BEL
         "vga_inst/Inst_RAM30x40_first/_o3377" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3373" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3375" BEL
         "vga_inst/Inst_RAM30x40_first/_o3379" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3385" BEL
         "vga_inst/Inst_RAM30x40_first/_o3381" BEL
         "vga_inst/Inst_RAM30x40_first/_o3383" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3385" BEL
         "vga_inst/Inst_RAM30x40_first/_o3387" BEL
         "vga_inst/Inst_RAM30x40_first/_o3389" BEL
         "vga_inst/Inst_RAM30x40_first/_o3395" BEL
@@ -760,27 +742,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o3487" BEL
         "vga_inst/Inst_RAM30x40_first/_o3491" BEL
         "vga_inst/Inst_RAM30x40_first/_o3493" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3499" BEL
         "vga_inst/Inst_RAM30x40_first/_o3495" BEL
         "vga_inst/Inst_RAM30x40_first/_o3497" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3499" BEL
         "vga_inst/Inst_RAM30x40_first/_o3501" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3507" BEL
         "vga_inst/Inst_RAM30x40_first/_o3503" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3505" BEL
         "vga_inst/Inst_RAM30x40_first/_o3509" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3505" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3507" BEL
         "vga_inst/Inst_RAM30x40_first/_o3511" BEL
         "vga_inst/Inst_RAM30x40_first/_o3513" BEL
         "vga_inst/Inst_RAM30x40_first/_o3515" BEL
         "vga_inst/Inst_RAM30x40_first/_o3517" BEL
         "vga_inst/Inst_RAM30x40_first/_o3519" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3525" BEL
         "vga_inst/Inst_RAM30x40_first/_o3521" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3523" BEL
         "vga_inst/Inst_RAM30x40_first/_o3527" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3523" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3525" BEL
         "vga_inst/Inst_RAM30x40_first/_o3529" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3535" BEL
         "vga_inst/Inst_RAM30x40_first/_o3531" BEL
         "vga_inst/Inst_RAM30x40_first/_o3533" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3535" BEL
         "vga_inst/Inst_RAM30x40_first/_o3537" BEL
         "vga_inst/Inst_RAM30x40_first/_o3539" BEL
         "vga_inst/Inst_RAM30x40_first/_o3545" BEL
@@ -835,27 +817,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o3637" BEL
         "vga_inst/Inst_RAM30x40_first/_o3641" BEL
         "vga_inst/Inst_RAM30x40_first/_o3643" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3649" BEL
         "vga_inst/Inst_RAM30x40_first/_o3645" BEL
         "vga_inst/Inst_RAM30x40_first/_o3647" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3649" BEL
         "vga_inst/Inst_RAM30x40_first/_o3651" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3657" BEL
         "vga_inst/Inst_RAM30x40_first/_o3653" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3655" BEL
         "vga_inst/Inst_RAM30x40_first/_o3659" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3655" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3657" BEL
         "vga_inst/Inst_RAM30x40_first/_o3661" BEL
         "vga_inst/Inst_RAM30x40_first/_o3663" BEL
         "vga_inst/Inst_RAM30x40_first/_o3665" BEL
         "vga_inst/Inst_RAM30x40_first/_o3667" BEL
         "vga_inst/Inst_RAM30x40_first/_o3669" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3675" BEL
         "vga_inst/Inst_RAM30x40_first/_o3671" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3673" BEL
         "vga_inst/Inst_RAM30x40_first/_o3677" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3673" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3675" BEL
         "vga_inst/Inst_RAM30x40_first/_o3679" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3685" BEL
         "vga_inst/Inst_RAM30x40_first/_o3681" BEL
         "vga_inst/Inst_RAM30x40_first/_o3683" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3685" BEL
         "vga_inst/Inst_RAM30x40_first/_o3687" BEL
         "vga_inst/Inst_RAM30x40_first/_o3689" BEL
         "vga_inst/Inst_RAM30x40_first/_o3695" BEL
@@ -910,27 +892,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o3787" BEL
         "vga_inst/Inst_RAM30x40_first/_o3791" BEL
         "vga_inst/Inst_RAM30x40_first/_o3793" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3799" BEL
         "vga_inst/Inst_RAM30x40_first/_o3795" BEL
         "vga_inst/Inst_RAM30x40_first/_o3797" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3799" BEL
         "vga_inst/Inst_RAM30x40_first/_o3801" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3807" BEL
         "vga_inst/Inst_RAM30x40_first/_o3803" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3805" BEL
         "vga_inst/Inst_RAM30x40_first/_o3809" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3805" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3807" BEL
         "vga_inst/Inst_RAM30x40_first/_o3811" BEL
         "vga_inst/Inst_RAM30x40_first/_o3813" BEL
         "vga_inst/Inst_RAM30x40_first/_o3815" BEL
         "vga_inst/Inst_RAM30x40_first/_o3817" BEL
         "vga_inst/Inst_RAM30x40_first/_o3819" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3825" BEL
         "vga_inst/Inst_RAM30x40_first/_o3821" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3823" BEL
         "vga_inst/Inst_RAM30x40_first/_o3827" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3823" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3825" BEL
         "vga_inst/Inst_RAM30x40_first/_o3829" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3835" BEL
         "vga_inst/Inst_RAM30x40_first/_o3831" BEL
         "vga_inst/Inst_RAM30x40_first/_o3833" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3835" BEL
         "vga_inst/Inst_RAM30x40_first/_o3837" BEL
         "vga_inst/Inst_RAM30x40_first/_o3839" BEL
         "vga_inst/Inst_RAM30x40_first/_o3845" BEL
@@ -985,27 +967,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o3937" BEL
         "vga_inst/Inst_RAM30x40_first/_o3941" BEL
         "vga_inst/Inst_RAM30x40_first/_o3943" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3949" BEL
         "vga_inst/Inst_RAM30x40_first/_o3945" BEL
         "vga_inst/Inst_RAM30x40_first/_o3947" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3949" BEL
         "vga_inst/Inst_RAM30x40_first/_o3951" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3957" BEL
         "vga_inst/Inst_RAM30x40_first/_o3953" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3955" BEL
         "vga_inst/Inst_RAM30x40_first/_o3959" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3955" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3957" BEL
         "vga_inst/Inst_RAM30x40_first/_o3961" BEL
         "vga_inst/Inst_RAM30x40_first/_o3963" BEL
         "vga_inst/Inst_RAM30x40_first/_o3965" BEL
         "vga_inst/Inst_RAM30x40_first/_o3967" BEL
         "vga_inst/Inst_RAM30x40_first/_o3969" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3975" BEL
         "vga_inst/Inst_RAM30x40_first/_o3971" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3973" BEL
         "vga_inst/Inst_RAM30x40_first/_o3977" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3973" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3975" BEL
         "vga_inst/Inst_RAM30x40_first/_o3979" BEL
-        "vga_inst/Inst_RAM30x40_first/_o3985" BEL
         "vga_inst/Inst_RAM30x40_first/_o3981" BEL
         "vga_inst/Inst_RAM30x40_first/_o3983" BEL
+        "vga_inst/Inst_RAM30x40_first/_o3985" BEL
         "vga_inst/Inst_RAM30x40_first/_o3987" BEL
         "vga_inst/Inst_RAM30x40_first/_o3989" BEL
         "vga_inst/Inst_RAM30x40_first/_o3995" BEL
@@ -1060,27 +1042,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o4087" BEL
         "vga_inst/Inst_RAM30x40_first/_o4091" BEL
         "vga_inst/Inst_RAM30x40_first/_o4093" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4099" BEL
         "vga_inst/Inst_RAM30x40_first/_o4095" BEL
         "vga_inst/Inst_RAM30x40_first/_o4097" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4099" BEL
         "vga_inst/Inst_RAM30x40_first/_o4101" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4107" BEL
         "vga_inst/Inst_RAM30x40_first/_o4103" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4105" BEL
         "vga_inst/Inst_RAM30x40_first/_o4109" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4105" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4107" BEL
         "vga_inst/Inst_RAM30x40_first/_o4111" BEL
         "vga_inst/Inst_RAM30x40_first/_o4113" BEL
         "vga_inst/Inst_RAM30x40_first/_o4115" BEL
         "vga_inst/Inst_RAM30x40_first/_o4117" BEL
         "vga_inst/Inst_RAM30x40_first/_o4119" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4125" BEL
         "vga_inst/Inst_RAM30x40_first/_o4121" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4123" BEL
         "vga_inst/Inst_RAM30x40_first/_o4127" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4123" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4125" BEL
         "vga_inst/Inst_RAM30x40_first/_o4129" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4135" BEL
         "vga_inst/Inst_RAM30x40_first/_o4131" BEL
         "vga_inst/Inst_RAM30x40_first/_o4133" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4135" BEL
         "vga_inst/Inst_RAM30x40_first/_o4137" BEL
         "vga_inst/Inst_RAM30x40_first/_o4139" BEL
         "vga_inst/Inst_RAM30x40_first/_o4145" BEL
@@ -1135,27 +1117,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o4237" BEL
         "vga_inst/Inst_RAM30x40_first/_o4241" BEL
         "vga_inst/Inst_RAM30x40_first/_o4243" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4249" BEL
         "vga_inst/Inst_RAM30x40_first/_o4245" BEL
         "vga_inst/Inst_RAM30x40_first/_o4247" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4249" BEL
         "vga_inst/Inst_RAM30x40_first/_o4251" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4257" BEL
         "vga_inst/Inst_RAM30x40_first/_o4253" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4255" BEL
         "vga_inst/Inst_RAM30x40_first/_o4259" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4255" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4257" BEL
         "vga_inst/Inst_RAM30x40_first/_o4261" BEL
         "vga_inst/Inst_RAM30x40_first/_o4263" BEL
         "vga_inst/Inst_RAM30x40_first/_o4265" BEL
         "vga_inst/Inst_RAM30x40_first/_o4267" BEL
         "vga_inst/Inst_RAM30x40_first/_o4269" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4275" BEL
         "vga_inst/Inst_RAM30x40_first/_o4271" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4273" BEL
         "vga_inst/Inst_RAM30x40_first/_o4277" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4273" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4275" BEL
         "vga_inst/Inst_RAM30x40_first/_o4279" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4285" BEL
         "vga_inst/Inst_RAM30x40_first/_o4281" BEL
         "vga_inst/Inst_RAM30x40_first/_o4283" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4285" BEL
         "vga_inst/Inst_RAM30x40_first/_o4287" BEL
         "vga_inst/Inst_RAM30x40_first/_o4289" BEL
         "vga_inst/Inst_RAM30x40_first/_o4295" BEL
@@ -1210,27 +1192,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o4387" BEL
         "vga_inst/Inst_RAM30x40_first/_o4391" BEL
         "vga_inst/Inst_RAM30x40_first/_o4393" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4399" BEL
         "vga_inst/Inst_RAM30x40_first/_o4395" BEL
         "vga_inst/Inst_RAM30x40_first/_o4397" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4399" BEL
         "vga_inst/Inst_RAM30x40_first/_o4401" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4407" BEL
         "vga_inst/Inst_RAM30x40_first/_o4403" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4405" BEL
         "vga_inst/Inst_RAM30x40_first/_o4409" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4405" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4407" BEL
         "vga_inst/Inst_RAM30x40_first/_o4411" BEL
         "vga_inst/Inst_RAM30x40_first/_o4413" BEL
         "vga_inst/Inst_RAM30x40_first/_o4415" BEL
         "vga_inst/Inst_RAM30x40_first/_o4417" BEL
         "vga_inst/Inst_RAM30x40_first/_o4419" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4425" BEL
         "vga_inst/Inst_RAM30x40_first/_o4421" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4423" BEL
         "vga_inst/Inst_RAM30x40_first/_o4427" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4423" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4425" BEL
         "vga_inst/Inst_RAM30x40_first/_o4429" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4435" BEL
         "vga_inst/Inst_RAM30x40_first/_o4431" BEL
         "vga_inst/Inst_RAM30x40_first/_o4433" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4435" BEL
         "vga_inst/Inst_RAM30x40_first/_o4437" BEL
         "vga_inst/Inst_RAM30x40_first/_o4439" BEL
         "vga_inst/Inst_RAM30x40_first/_o4445" BEL
@@ -1285,37 +1267,37 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_first/_o4537" BEL
         "vga_inst/Inst_RAM30x40_first/_o4541" BEL
         "vga_inst/Inst_RAM30x40_first/_o4543" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4549" BEL
         "vga_inst/Inst_RAM30x40_first/_o4545" BEL
         "vga_inst/Inst_RAM30x40_first/_o4547" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4549" BEL
         "vga_inst/Inst_RAM30x40_first/_o4551" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4557" BEL
         "vga_inst/Inst_RAM30x40_first/_o4553" BEL
-        "vga_inst/Inst_RAM30x40_first/_o4555" BEL
         "vga_inst/Inst_RAM30x40_first/_o4559" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4555" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4557" BEL
         "vga_inst/Inst_RAM30x40_first/_o4561" BEL
         "vga_inst/Inst_RAM30x40_first/_o4563" BEL
         "vga_inst/Inst_RAM30x40_first/_o4565" BEL
         "vga_inst/Inst_RAM30x40_first/_o4567" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2173" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2169" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2171" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2175" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2177" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2183" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2179" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2181" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2185" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2187" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2193" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2189" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2191" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2195" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2197" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2199" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2201" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2203" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2205" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4569" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4571" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4577" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4573" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4575" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4579" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4581" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4583" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4585" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4587" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4589" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4595" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4591" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4593" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4597" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4599" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4601" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4603" BEL
+        "vga_inst/Inst_RAM30x40_first/_o4605" BEL
         "vga_inst/Inst_RAM30x40_second/_o2211" BEL
         "vga_inst/Inst_RAM30x40_second/_o2207" BEL
         "vga_inst/Inst_RAM30x40_second/_o2209" BEL
@@ -1435,27 +1417,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o2437" BEL
         "vga_inst/Inst_RAM30x40_second/_o2441" BEL
         "vga_inst/Inst_RAM30x40_second/_o2443" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2449" BEL
         "vga_inst/Inst_RAM30x40_second/_o2445" BEL
         "vga_inst/Inst_RAM30x40_second/_o2447" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2449" BEL
         "vga_inst/Inst_RAM30x40_second/_o2451" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2457" BEL
         "vga_inst/Inst_RAM30x40_second/_o2453" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2455" BEL
         "vga_inst/Inst_RAM30x40_second/_o2459" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2455" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2457" BEL
         "vga_inst/Inst_RAM30x40_second/_o2461" BEL
         "vga_inst/Inst_RAM30x40_second/_o2463" BEL
         "vga_inst/Inst_RAM30x40_second/_o2465" BEL
         "vga_inst/Inst_RAM30x40_second/_o2467" BEL
         "vga_inst/Inst_RAM30x40_second/_o2469" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2475" BEL
         "vga_inst/Inst_RAM30x40_second/_o2471" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2473" BEL
         "vga_inst/Inst_RAM30x40_second/_o2477" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2473" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2475" BEL
         "vga_inst/Inst_RAM30x40_second/_o2479" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2485" BEL
         "vga_inst/Inst_RAM30x40_second/_o2481" BEL
         "vga_inst/Inst_RAM30x40_second/_o2483" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2485" BEL
         "vga_inst/Inst_RAM30x40_second/_o2487" BEL
         "vga_inst/Inst_RAM30x40_second/_o2489" BEL
         "vga_inst/Inst_RAM30x40_second/_o2495" BEL
@@ -1510,27 +1492,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o2587" BEL
         "vga_inst/Inst_RAM30x40_second/_o2591" BEL
         "vga_inst/Inst_RAM30x40_second/_o2593" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2599" BEL
         "vga_inst/Inst_RAM30x40_second/_o2595" BEL
         "vga_inst/Inst_RAM30x40_second/_o2597" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2599" BEL
         "vga_inst/Inst_RAM30x40_second/_o2601" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2607" BEL
         "vga_inst/Inst_RAM30x40_second/_o2603" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2605" BEL
         "vga_inst/Inst_RAM30x40_second/_o2609" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2605" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2607" BEL
         "vga_inst/Inst_RAM30x40_second/_o2611" BEL
         "vga_inst/Inst_RAM30x40_second/_o2613" BEL
         "vga_inst/Inst_RAM30x40_second/_o2615" BEL
         "vga_inst/Inst_RAM30x40_second/_o2617" BEL
         "vga_inst/Inst_RAM30x40_second/_o2619" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2625" BEL
         "vga_inst/Inst_RAM30x40_second/_o2621" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2623" BEL
         "vga_inst/Inst_RAM30x40_second/_o2627" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2623" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2625" BEL
         "vga_inst/Inst_RAM30x40_second/_o2629" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2635" BEL
         "vga_inst/Inst_RAM30x40_second/_o2631" BEL
         "vga_inst/Inst_RAM30x40_second/_o2633" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2635" BEL
         "vga_inst/Inst_RAM30x40_second/_o2637" BEL
         "vga_inst/Inst_RAM30x40_second/_o2639" BEL
         "vga_inst/Inst_RAM30x40_second/_o2645" BEL
@@ -1585,27 +1567,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o2737" BEL
         "vga_inst/Inst_RAM30x40_second/_o2741" BEL
         "vga_inst/Inst_RAM30x40_second/_o2743" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2749" BEL
         "vga_inst/Inst_RAM30x40_second/_o2745" BEL
         "vga_inst/Inst_RAM30x40_second/_o2747" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2749" BEL
         "vga_inst/Inst_RAM30x40_second/_o2751" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2757" BEL
         "vga_inst/Inst_RAM30x40_second/_o2753" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2755" BEL
         "vga_inst/Inst_RAM30x40_second/_o2759" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2755" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2757" BEL
         "vga_inst/Inst_RAM30x40_second/_o2761" BEL
         "vga_inst/Inst_RAM30x40_second/_o2763" BEL
         "vga_inst/Inst_RAM30x40_second/_o2765" BEL
         "vga_inst/Inst_RAM30x40_second/_o2767" BEL
         "vga_inst/Inst_RAM30x40_second/_o2769" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2775" BEL
         "vga_inst/Inst_RAM30x40_second/_o2771" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2773" BEL
         "vga_inst/Inst_RAM30x40_second/_o2777" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2773" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2775" BEL
         "vga_inst/Inst_RAM30x40_second/_o2779" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2785" BEL
         "vga_inst/Inst_RAM30x40_second/_o2781" BEL
         "vga_inst/Inst_RAM30x40_second/_o2783" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2785" BEL
         "vga_inst/Inst_RAM30x40_second/_o2787" BEL
         "vga_inst/Inst_RAM30x40_second/_o2789" BEL
         "vga_inst/Inst_RAM30x40_second/_o2795" BEL
@@ -1660,27 +1642,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o2887" BEL
         "vga_inst/Inst_RAM30x40_second/_o2891" BEL
         "vga_inst/Inst_RAM30x40_second/_o2893" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2899" BEL
         "vga_inst/Inst_RAM30x40_second/_o2895" BEL
         "vga_inst/Inst_RAM30x40_second/_o2897" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2899" BEL
         "vga_inst/Inst_RAM30x40_second/_o2901" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2907" BEL
         "vga_inst/Inst_RAM30x40_second/_o2903" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2905" BEL
         "vga_inst/Inst_RAM30x40_second/_o2909" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2905" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2907" BEL
         "vga_inst/Inst_RAM30x40_second/_o2911" BEL
         "vga_inst/Inst_RAM30x40_second/_o2913" BEL
         "vga_inst/Inst_RAM30x40_second/_o2915" BEL
         "vga_inst/Inst_RAM30x40_second/_o2917" BEL
         "vga_inst/Inst_RAM30x40_second/_o2919" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2925" BEL
         "vga_inst/Inst_RAM30x40_second/_o2921" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2923" BEL
         "vga_inst/Inst_RAM30x40_second/_o2927" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2923" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2925" BEL
         "vga_inst/Inst_RAM30x40_second/_o2929" BEL
-        "vga_inst/Inst_RAM30x40_second/_o2935" BEL
         "vga_inst/Inst_RAM30x40_second/_o2931" BEL
         "vga_inst/Inst_RAM30x40_second/_o2933" BEL
+        "vga_inst/Inst_RAM30x40_second/_o2935" BEL
         "vga_inst/Inst_RAM30x40_second/_o2937" BEL
         "vga_inst/Inst_RAM30x40_second/_o2939" BEL
         "vga_inst/Inst_RAM30x40_second/_o2945" BEL
@@ -1735,27 +1717,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o3037" BEL
         "vga_inst/Inst_RAM30x40_second/_o3041" BEL
         "vga_inst/Inst_RAM30x40_second/_o3043" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3049" BEL
         "vga_inst/Inst_RAM30x40_second/_o3045" BEL
         "vga_inst/Inst_RAM30x40_second/_o3047" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3049" BEL
         "vga_inst/Inst_RAM30x40_second/_o3051" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3057" BEL
         "vga_inst/Inst_RAM30x40_second/_o3053" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3055" BEL
         "vga_inst/Inst_RAM30x40_second/_o3059" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3055" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3057" BEL
         "vga_inst/Inst_RAM30x40_second/_o3061" BEL
         "vga_inst/Inst_RAM30x40_second/_o3063" BEL
         "vga_inst/Inst_RAM30x40_second/_o3065" BEL
         "vga_inst/Inst_RAM30x40_second/_o3067" BEL
         "vga_inst/Inst_RAM30x40_second/_o3069" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3075" BEL
         "vga_inst/Inst_RAM30x40_second/_o3071" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3073" BEL
         "vga_inst/Inst_RAM30x40_second/_o3077" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3073" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3075" BEL
         "vga_inst/Inst_RAM30x40_second/_o3079" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3085" BEL
         "vga_inst/Inst_RAM30x40_second/_o3081" BEL
         "vga_inst/Inst_RAM30x40_second/_o3083" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3085" BEL
         "vga_inst/Inst_RAM30x40_second/_o3087" BEL
         "vga_inst/Inst_RAM30x40_second/_o3089" BEL
         "vga_inst/Inst_RAM30x40_second/_o3095" BEL
@@ -1810,27 +1792,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o3187" BEL
         "vga_inst/Inst_RAM30x40_second/_o3191" BEL
         "vga_inst/Inst_RAM30x40_second/_o3193" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3199" BEL
         "vga_inst/Inst_RAM30x40_second/_o3195" BEL
         "vga_inst/Inst_RAM30x40_second/_o3197" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3199" BEL
         "vga_inst/Inst_RAM30x40_second/_o3201" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3207" BEL
         "vga_inst/Inst_RAM30x40_second/_o3203" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3205" BEL
         "vga_inst/Inst_RAM30x40_second/_o3209" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3205" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3207" BEL
         "vga_inst/Inst_RAM30x40_second/_o3211" BEL
         "vga_inst/Inst_RAM30x40_second/_o3213" BEL
         "vga_inst/Inst_RAM30x40_second/_o3215" BEL
         "vga_inst/Inst_RAM30x40_second/_o3217" BEL
         "vga_inst/Inst_RAM30x40_second/_o3219" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3225" BEL
         "vga_inst/Inst_RAM30x40_second/_o3221" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3223" BEL
         "vga_inst/Inst_RAM30x40_second/_o3227" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3223" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3225" BEL
         "vga_inst/Inst_RAM30x40_second/_o3229" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3235" BEL
         "vga_inst/Inst_RAM30x40_second/_o3231" BEL
         "vga_inst/Inst_RAM30x40_second/_o3233" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3235" BEL
         "vga_inst/Inst_RAM30x40_second/_o3237" BEL
         "vga_inst/Inst_RAM30x40_second/_o3239" BEL
         "vga_inst/Inst_RAM30x40_second/_o3245" BEL
@@ -1885,27 +1867,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o3337" BEL
         "vga_inst/Inst_RAM30x40_second/_o3341" BEL
         "vga_inst/Inst_RAM30x40_second/_o3343" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3349" BEL
         "vga_inst/Inst_RAM30x40_second/_o3345" BEL
         "vga_inst/Inst_RAM30x40_second/_o3347" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3349" BEL
         "vga_inst/Inst_RAM30x40_second/_o3351" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3357" BEL
         "vga_inst/Inst_RAM30x40_second/_o3353" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3355" BEL
         "vga_inst/Inst_RAM30x40_second/_o3359" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3355" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3357" BEL
         "vga_inst/Inst_RAM30x40_second/_o3361" BEL
         "vga_inst/Inst_RAM30x40_second/_o3363" BEL
         "vga_inst/Inst_RAM30x40_second/_o3365" BEL
         "vga_inst/Inst_RAM30x40_second/_o3367" BEL
         "vga_inst/Inst_RAM30x40_second/_o3369" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3375" BEL
         "vga_inst/Inst_RAM30x40_second/_o3371" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3373" BEL
         "vga_inst/Inst_RAM30x40_second/_o3377" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3373" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3375" BEL
         "vga_inst/Inst_RAM30x40_second/_o3379" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3385" BEL
         "vga_inst/Inst_RAM30x40_second/_o3381" BEL
         "vga_inst/Inst_RAM30x40_second/_o3383" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3385" BEL
         "vga_inst/Inst_RAM30x40_second/_o3387" BEL
         "vga_inst/Inst_RAM30x40_second/_o3389" BEL
         "vga_inst/Inst_RAM30x40_second/_o3395" BEL
@@ -1960,27 +1942,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o3487" BEL
         "vga_inst/Inst_RAM30x40_second/_o3491" BEL
         "vga_inst/Inst_RAM30x40_second/_o3493" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3499" BEL
         "vga_inst/Inst_RAM30x40_second/_o3495" BEL
         "vga_inst/Inst_RAM30x40_second/_o3497" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3499" BEL
         "vga_inst/Inst_RAM30x40_second/_o3501" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3507" BEL
         "vga_inst/Inst_RAM30x40_second/_o3503" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3505" BEL
         "vga_inst/Inst_RAM30x40_second/_o3509" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3505" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3507" BEL
         "vga_inst/Inst_RAM30x40_second/_o3511" BEL
         "vga_inst/Inst_RAM30x40_second/_o3513" BEL
         "vga_inst/Inst_RAM30x40_second/_o3515" BEL
         "vga_inst/Inst_RAM30x40_second/_o3517" BEL
         "vga_inst/Inst_RAM30x40_second/_o3519" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3525" BEL
         "vga_inst/Inst_RAM30x40_second/_o3521" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3523" BEL
         "vga_inst/Inst_RAM30x40_second/_o3527" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3523" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3525" BEL
         "vga_inst/Inst_RAM30x40_second/_o3529" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3535" BEL
         "vga_inst/Inst_RAM30x40_second/_o3531" BEL
         "vga_inst/Inst_RAM30x40_second/_o3533" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3535" BEL
         "vga_inst/Inst_RAM30x40_second/_o3537" BEL
         "vga_inst/Inst_RAM30x40_second/_o3539" BEL
         "vga_inst/Inst_RAM30x40_second/_o3545" BEL
@@ -2035,27 +2017,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o3637" BEL
         "vga_inst/Inst_RAM30x40_second/_o3641" BEL
         "vga_inst/Inst_RAM30x40_second/_o3643" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3649" BEL
         "vga_inst/Inst_RAM30x40_second/_o3645" BEL
         "vga_inst/Inst_RAM30x40_second/_o3647" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3649" BEL
         "vga_inst/Inst_RAM30x40_second/_o3651" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3657" BEL
         "vga_inst/Inst_RAM30x40_second/_o3653" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3655" BEL
         "vga_inst/Inst_RAM30x40_second/_o3659" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3655" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3657" BEL
         "vga_inst/Inst_RAM30x40_second/_o3661" BEL
         "vga_inst/Inst_RAM30x40_second/_o3663" BEL
         "vga_inst/Inst_RAM30x40_second/_o3665" BEL
         "vga_inst/Inst_RAM30x40_second/_o3667" BEL
         "vga_inst/Inst_RAM30x40_second/_o3669" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3675" BEL
         "vga_inst/Inst_RAM30x40_second/_o3671" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3673" BEL
         "vga_inst/Inst_RAM30x40_second/_o3677" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3673" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3675" BEL
         "vga_inst/Inst_RAM30x40_second/_o3679" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3685" BEL
         "vga_inst/Inst_RAM30x40_second/_o3681" BEL
         "vga_inst/Inst_RAM30x40_second/_o3683" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3685" BEL
         "vga_inst/Inst_RAM30x40_second/_o3687" BEL
         "vga_inst/Inst_RAM30x40_second/_o3689" BEL
         "vga_inst/Inst_RAM30x40_second/_o3695" BEL
@@ -2110,27 +2092,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o3787" BEL
         "vga_inst/Inst_RAM30x40_second/_o3791" BEL
         "vga_inst/Inst_RAM30x40_second/_o3793" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3799" BEL
         "vga_inst/Inst_RAM30x40_second/_o3795" BEL
         "vga_inst/Inst_RAM30x40_second/_o3797" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3799" BEL
         "vga_inst/Inst_RAM30x40_second/_o3801" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3807" BEL
         "vga_inst/Inst_RAM30x40_second/_o3803" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3805" BEL
         "vga_inst/Inst_RAM30x40_second/_o3809" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3805" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3807" BEL
         "vga_inst/Inst_RAM30x40_second/_o3811" BEL
         "vga_inst/Inst_RAM30x40_second/_o3813" BEL
         "vga_inst/Inst_RAM30x40_second/_o3815" BEL
         "vga_inst/Inst_RAM30x40_second/_o3817" BEL
         "vga_inst/Inst_RAM30x40_second/_o3819" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3825" BEL
         "vga_inst/Inst_RAM30x40_second/_o3821" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3823" BEL
         "vga_inst/Inst_RAM30x40_second/_o3827" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3823" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3825" BEL
         "vga_inst/Inst_RAM30x40_second/_o3829" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3835" BEL
         "vga_inst/Inst_RAM30x40_second/_o3831" BEL
         "vga_inst/Inst_RAM30x40_second/_o3833" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3835" BEL
         "vga_inst/Inst_RAM30x40_second/_o3837" BEL
         "vga_inst/Inst_RAM30x40_second/_o3839" BEL
         "vga_inst/Inst_RAM30x40_second/_o3845" BEL
@@ -2185,27 +2167,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o3937" BEL
         "vga_inst/Inst_RAM30x40_second/_o3941" BEL
         "vga_inst/Inst_RAM30x40_second/_o3943" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3949" BEL
         "vga_inst/Inst_RAM30x40_second/_o3945" BEL
         "vga_inst/Inst_RAM30x40_second/_o3947" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3949" BEL
         "vga_inst/Inst_RAM30x40_second/_o3951" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3957" BEL
         "vga_inst/Inst_RAM30x40_second/_o3953" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3955" BEL
         "vga_inst/Inst_RAM30x40_second/_o3959" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3955" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3957" BEL
         "vga_inst/Inst_RAM30x40_second/_o3961" BEL
         "vga_inst/Inst_RAM30x40_second/_o3963" BEL
         "vga_inst/Inst_RAM30x40_second/_o3965" BEL
         "vga_inst/Inst_RAM30x40_second/_o3967" BEL
         "vga_inst/Inst_RAM30x40_second/_o3969" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3975" BEL
         "vga_inst/Inst_RAM30x40_second/_o3971" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3973" BEL
         "vga_inst/Inst_RAM30x40_second/_o3977" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3973" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3975" BEL
         "vga_inst/Inst_RAM30x40_second/_o3979" BEL
-        "vga_inst/Inst_RAM30x40_second/_o3985" BEL
         "vga_inst/Inst_RAM30x40_second/_o3981" BEL
         "vga_inst/Inst_RAM30x40_second/_o3983" BEL
+        "vga_inst/Inst_RAM30x40_second/_o3985" BEL
         "vga_inst/Inst_RAM30x40_second/_o3987" BEL
         "vga_inst/Inst_RAM30x40_second/_o3989" BEL
         "vga_inst/Inst_RAM30x40_second/_o3995" BEL
@@ -2260,27 +2242,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o4087" BEL
         "vga_inst/Inst_RAM30x40_second/_o4091" BEL
         "vga_inst/Inst_RAM30x40_second/_o4093" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4099" BEL
         "vga_inst/Inst_RAM30x40_second/_o4095" BEL
         "vga_inst/Inst_RAM30x40_second/_o4097" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4099" BEL
         "vga_inst/Inst_RAM30x40_second/_o4101" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4107" BEL
         "vga_inst/Inst_RAM30x40_second/_o4103" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4105" BEL
         "vga_inst/Inst_RAM30x40_second/_o4109" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4105" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4107" BEL
         "vga_inst/Inst_RAM30x40_second/_o4111" BEL
         "vga_inst/Inst_RAM30x40_second/_o4113" BEL
         "vga_inst/Inst_RAM30x40_second/_o4115" BEL
         "vga_inst/Inst_RAM30x40_second/_o4117" BEL
         "vga_inst/Inst_RAM30x40_second/_o4119" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4125" BEL
         "vga_inst/Inst_RAM30x40_second/_o4121" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4123" BEL
         "vga_inst/Inst_RAM30x40_second/_o4127" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4123" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4125" BEL
         "vga_inst/Inst_RAM30x40_second/_o4129" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4135" BEL
         "vga_inst/Inst_RAM30x40_second/_o4131" BEL
         "vga_inst/Inst_RAM30x40_second/_o4133" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4135" BEL
         "vga_inst/Inst_RAM30x40_second/_o4137" BEL
         "vga_inst/Inst_RAM30x40_second/_o4139" BEL
         "vga_inst/Inst_RAM30x40_second/_o4145" BEL
@@ -2335,27 +2317,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o4237" BEL
         "vga_inst/Inst_RAM30x40_second/_o4241" BEL
         "vga_inst/Inst_RAM30x40_second/_o4243" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4249" BEL
         "vga_inst/Inst_RAM30x40_second/_o4245" BEL
         "vga_inst/Inst_RAM30x40_second/_o4247" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4249" BEL
         "vga_inst/Inst_RAM30x40_second/_o4251" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4257" BEL
         "vga_inst/Inst_RAM30x40_second/_o4253" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4255" BEL
         "vga_inst/Inst_RAM30x40_second/_o4259" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4255" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4257" BEL
         "vga_inst/Inst_RAM30x40_second/_o4261" BEL
         "vga_inst/Inst_RAM30x40_second/_o4263" BEL
         "vga_inst/Inst_RAM30x40_second/_o4265" BEL
         "vga_inst/Inst_RAM30x40_second/_o4267" BEL
         "vga_inst/Inst_RAM30x40_second/_o4269" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4275" BEL
         "vga_inst/Inst_RAM30x40_second/_o4271" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4273" BEL
         "vga_inst/Inst_RAM30x40_second/_o4277" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4273" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4275" BEL
         "vga_inst/Inst_RAM30x40_second/_o4279" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4285" BEL
         "vga_inst/Inst_RAM30x40_second/_o4281" BEL
         "vga_inst/Inst_RAM30x40_second/_o4283" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4285" BEL
         "vga_inst/Inst_RAM30x40_second/_o4287" BEL
         "vga_inst/Inst_RAM30x40_second/_o4289" BEL
         "vga_inst/Inst_RAM30x40_second/_o4295" BEL
@@ -2410,27 +2392,27 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o4387" BEL
         "vga_inst/Inst_RAM30x40_second/_o4391" BEL
         "vga_inst/Inst_RAM30x40_second/_o4393" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4399" BEL
         "vga_inst/Inst_RAM30x40_second/_o4395" BEL
         "vga_inst/Inst_RAM30x40_second/_o4397" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4399" BEL
         "vga_inst/Inst_RAM30x40_second/_o4401" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4407" BEL
         "vga_inst/Inst_RAM30x40_second/_o4403" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4405" BEL
         "vga_inst/Inst_RAM30x40_second/_o4409" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4405" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4407" BEL
         "vga_inst/Inst_RAM30x40_second/_o4411" BEL
         "vga_inst/Inst_RAM30x40_second/_o4413" BEL
         "vga_inst/Inst_RAM30x40_second/_o4415" BEL
         "vga_inst/Inst_RAM30x40_second/_o4417" BEL
         "vga_inst/Inst_RAM30x40_second/_o4419" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4425" BEL
         "vga_inst/Inst_RAM30x40_second/_o4421" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4423" BEL
         "vga_inst/Inst_RAM30x40_second/_o4427" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4423" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4425" BEL
         "vga_inst/Inst_RAM30x40_second/_o4429" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4435" BEL
         "vga_inst/Inst_RAM30x40_second/_o4431" BEL
         "vga_inst/Inst_RAM30x40_second/_o4433" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4435" BEL
         "vga_inst/Inst_RAM30x40_second/_o4437" BEL
         "vga_inst/Inst_RAM30x40_second/_o4439" BEL
         "vga_inst/Inst_RAM30x40_second/_o4445" BEL
@@ -2485,18 +2467,37 @@ TIMEGRP clkgen_inst_clkout0 = BEL "kcpsm_inport_0" BEL "kcpsm_inport_1" BEL
         "vga_inst/Inst_RAM30x40_second/_o4537" BEL
         "vga_inst/Inst_RAM30x40_second/_o4541" BEL
         "vga_inst/Inst_RAM30x40_second/_o4543" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4549" BEL
         "vga_inst/Inst_RAM30x40_second/_o4545" BEL
         "vga_inst/Inst_RAM30x40_second/_o4547" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4549" BEL
         "vga_inst/Inst_RAM30x40_second/_o4551" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4557" BEL
         "vga_inst/Inst_RAM30x40_second/_o4553" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4555" BEL
         "vga_inst/Inst_RAM30x40_second/_o4559" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4555" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4557" BEL
         "vga_inst/Inst_RAM30x40_second/_o4561" BEL
         "vga_inst/Inst_RAM30x40_second/_o4563" BEL
         "vga_inst/Inst_RAM30x40_second/_o4565" BEL
-        "vga_inst/Inst_RAM30x40_second/_o4567" BEL "vga_inst/color_5" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4567" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4569" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4571" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4577" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4573" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4575" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4579" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4581" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4583" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4585" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4587" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4589" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4595" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4591" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4593" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4597" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4599" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4601" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4603" BEL
+        "vga_inst/Inst_RAM30x40_second/_o4605" BEL "vga_inst/color_5" BEL
         "vga_inst/color_2" BEL "vga_inst/curr_bit_1" BEL "vga_inst/curr_bit_0"
         BEL "vga_inst/Inst_hsync/cnt/count_10" BEL
         "vga_inst/Inst_hsync/cnt/count_9" BEL

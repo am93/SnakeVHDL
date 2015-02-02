@@ -30,18 +30,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity snake_top is
-    Port ( clk_m : in  STD_LOGIC;
-           reset_i : in  STD_LOGIC;
-           kbdclk_i : in  STD_LOGIC;
-           kbddata_i : in  STD_LOGIC;
-           hsync_o : out  STD_LOGIC;
-           vsync_o : out  STD_LOGIC;
-           red_o : out  STD_LOGIC_VECTOR (2 downto 0);
-           green_o : out  STD_LOGIC_VECTOR (2 downto 0);
-           blue_o : out  STD_LOGIC_VECTOR (1 downto 0);
-			  cathode_o : out STD_LOGIC_VECTOR (0 to 6);
-			  anode_o : out STD_LOGIC_VECTOR (3 downto 0);
-			  led_o : out STD_LOGIC_VECTOR(15 downto 0);
+    Port ( clk_m : 		in  STD_LOGIC;
+           reset_i : 	in  STD_LOGIC;
+           kbdclk_i : 	in  STD_LOGIC;
+           kbddata_i : 	in  STD_LOGIC;
+			  sw_i : 		in STD_LOGIC;
+           hsync_o : 	out  STD_LOGIC;
+           vsync_o : 	out  STD_LOGIC;
+           red_o : 		out  STD_LOGIC_VECTOR (2 downto 0);
+           green_o : 	out  STD_LOGIC_VECTOR (2 downto 0);
+           blue_o : 		out  STD_LOGIC_VECTOR (1 downto 0);
+			  cathode_o : 	out STD_LOGIC_VECTOR (0 to 6);
+			  anode_o : 	out STD_LOGIC_VECTOR (3 downto 0);
+			  led_o : 		out STD_LOGIC_VECTOR(15 downto 0);
 			  colorLED_o : out  STD_LOGIC_VECTOR (1 downto 0)
 			  );
 end snake_top;
@@ -303,6 +304,8 @@ begin
 		if(clk_i'event and clk_i = '1') then
 			if(kcpsm_portid = X"03") then
 				kcpsm_inport <= scan_code;
+			elsif (kcpsm_portid = X"05") then
+				kcpsm_inport(0) <= sw_i;
 			end if;
 		end if;
 	

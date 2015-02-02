@@ -16,6 +16,10 @@ start:      CALL clear			; pobrisemo zaslon
 			LOAD sE, 25			; food row
 			LOAD sF, C6 		; food column
 			
+			REGBANK B			; zamenjamo set registrov
+			INPUT s0, 05		; preberemo game mode
+			REGBANK A			; nazaj na set A
+			
 			OUTPUT s7, 04		; signal za reset LEDic na 0
 			OUTPUT sE, 00		; hrana v VHDL 
 			OUTPUT sF, 01		; hrana v VHDL
@@ -146,15 +150,24 @@ moveright:	COMPARE s4, 00 ; 27
 			JUMP Z, start
 			SUB s4, 01
 			STORE s4, 01
-endcase:	LOAD sA, s5
+endcase:	LOAD s9, s3			; shrani vrstico glave v s9
+			LOAD sB, s4			; shrani stolpec glave v sB
+			LOAD sA, s5
 			LOAD s8, 00
 turn_on:	FETCH s3, (s8)
 			ADD s8, 01
 			FETCH s4,(s8)
 			ADD s8, 01
 			
+			COMPARE s8, 03		; če smo na glavi preskoči preverjanje
+			JUMP C, nadaljuj
 			
-			LOAD s6, 02			; vrednost binarna 10 za barvo kace
+			COMPARE s9, s3		; primerjaj če je vrstica glave enaka vrstici trenutnega pixla
+			JUMP NZ, nadaljuj
+			COMPARE sB, s4		; primerjaj če je stolpec glave enak stolpcu trenutnega pixla
+			JUMP Z, start
+			
+nadaljuj:	LOAD s6, 02			; vrednost binarna 10 za barvo kace
 			
 			OUTPUT s3, 00
 			OUTPUT s4, 01
@@ -166,19 +179,23 @@ turn_on:	FETCH s3, (s8)
 			
 			LOAD s6, 01			; popravi vrednost s6
 			
-			;JUMP Z, fast
+			REGBANK B
+			TEST s0, 01
+			REGBANK A
+			
+			JUMP NZ, fast
 			CALL delay_500us	
 			CALL delay_500us
 			CALL delay_500us
 			CALL delay_500us
 			CALL delay_500us
-			CALL delay_500us
+	fast:	CALL delay_500us
 			CALL delay_500us
 			CALL delay_500us
 			CALL delay_500us
 			CALL delay_500us
 			
-	fast:		JUMP main
+			JUMP main
 			
 lfsr:			LOAD sB, sE
 				AND sB, 01
@@ -254,6 +271,7 @@ clear:		LOAD s4, 28
 			
 			COMPARE s4, 00
 			JUMP NZ, loop1
+			LOAD s6, 01
 			OUTPUT s6, 04
 			RETURN
 	

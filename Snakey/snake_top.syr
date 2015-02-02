@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Reading design: snake_top.prj
 
@@ -219,8 +219,8 @@ WARNING:HDLCompiler:92 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ColorL
 
 Synthesizing Unit <snake_top>.
     Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd".
-INFO:Xst:3210 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 223: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 223: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <resetLED>.
     Found 2-bit register for signal <data>.
     Found 6-bit register for signal <column>.
@@ -230,6 +230,7 @@ INFO:Xst:3210 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" 
     Found 1-bit register for signal <kcpsm_int>.
     Summary:
 	inferred  24 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <snake_top> synthesized.
 
 Synthesizing Unit <clkgen>.
@@ -1928,8 +1929,8 @@ Macro Statistics
  10-bit comparator greater                             : 3
  11-bit comparator greater                             : 3
  16-bit comparator lessequal                           : 1
-# Multiplexers                                         : 40
- 1-bit 2-to-1 multiplexer                              : 23
+# Multiplexers                                         : 42
+ 1-bit 2-to-1 multiplexer                              : 24
  10-bit 2-to-1 multiplexer                             : 1
  15-bit 2-to-1 multiplexer                             : 1
  16-bit 2-to-1 multiplexer                             : 1
@@ -1937,7 +1938,7 @@ Macro Statistics
  2-bit 40-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 9
  40-bit 30-to-1 multiplexer                            : 2
- 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 5
 
 =========================================================================
@@ -2010,8 +2011,8 @@ Macro Statistics
  10-bit comparator greater                             : 3
  11-bit comparator greater                             : 3
  16-bit comparator lessequal                           : 1
-# Multiplexers                                         : 38
- 1-bit 2-to-1 multiplexer                              : 23
+# Multiplexers                                         : 47
+ 1-bit 2-to-1 multiplexer                              : 32
  10-bit 2-to-1 multiplexer                             : 1
  16-bit 2-to-1 multiplexer                             : 1
  2-bit 40-to-1 multiplexer                             : 1
@@ -2151,7 +2152,7 @@ Top Level Output File Name         : snake_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2611
+# BELS                             : 2619
 #      GND                         : 1
 #      INV                         : 5
 #      LUT1                        : 50
@@ -2159,7 +2160,7 @@ Primitive and Black Box Usage:
 #      LUT3                        : 1303
 #      LUT4                        : 47
 #      LUT5                        : 43
-#      LUT6                        : 854
+#      LUT6                        : 862
 #      LUT6_2                      : 50
 #      MUXCY                       : 79
 #      MUXF7                       : 84
@@ -2167,9 +2168,9 @@ Primitive and Black Box Usage:
 #      VCC                         : 1
 #      XORCY                       : 81
 # FlipFlops/Latches                : 2620
-#      FD                          : 58
+#      FD                          : 66
 #      FDC                         : 34
-#      FDE                         : 2427
+#      FDE                         : 2419
 #      FDR                         : 47
 #      FDRE                        : 51
 #      FDS                         : 3
@@ -2179,8 +2180,8 @@ Primitive and Black Box Usage:
 #      RAMB18E1                    : 1
 # Clock Buffers                    : 2
 #      BUFG                        : 2
-# IO Buffers                       : 43
-#      IBUF                        : 3
+# IO Buffers                       : 44
+#      IBUF                        : 4
 #      IBUFG                       : 1
 #      OBUF                        : 39
 # Others                           : 1
@@ -2194,21 +2195,21 @@ Selected Device : 7a100tcsg324-1
 
 Slice Logic Utilization: 
  Number of Slice Registers:            2620  out of  126800     2%  
- Number of Slice LUTs:                 2387  out of  63400     3%  
-    Number used as Logic:              2363  out of  63400     3%  
+ Number of Slice LUTs:                 2395  out of  63400     3%  
+    Number used as Logic:              2371  out of  63400     3%  
     Number used as Memory:               24  out of  19000     0%  
        Number used as RAM:               24
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4859
-   Number with an unused Flip Flop:    2239  out of   4859    46%  
-   Number with an unused LUT:          2472  out of   4859    50%  
-   Number of fully used LUT-FF pairs:   148  out of   4859     3%  
-   Number of unique control sets:      1219
+ Number of LUT Flip Flop pairs used:   4861
+   Number with an unused Flip Flop:    2241  out of   4861    46%  
+   Number with an unused LUT:          2466  out of   4861    50%  
+   Number of fully used LUT-FF pairs:   154  out of   4861     3%  
+   Number of unique control sets:      1218
 
 IO Utilization: 
- Number of IOs:                          43
- Number of bonded IOBs:                  43  out of    210    20%  
+ Number of IOs:                          44
+ Number of bonded IOBs:                  44  out of    210    20%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    135     0%  
@@ -2261,7 +2262,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkgen_inst/clkout0'
   Clock period: 7.761ns (frequency: 128.849MHz)
-  Total number of paths / destination ports: 49806 / 5255
+  Total number of paths / destination ports: 49816 / 5247
 -------------------------------------------------------------------------
 Delay:               7.761ns (Levels of Logic = 9)
   Source:            Inst_firmware/ram_1k_generate.akv7.kcpsm6_rom (RAM)
@@ -2311,7 +2312,7 @@ Delay:               3.590ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clkgen_inst/clkout0'
-  Total number of paths / destination ports: 112 / 104
+  Total number of paths / destination ports: 113 / 105
 -------------------------------------------------------------------------
 Offset:              4.640ns (Levels of Logic = 6)
   Source:            reset_i (PAD)
@@ -2396,12 +2397,12 @@ kcpsm_sleep    |    3.590|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 32.00 secs
-Total CPU time to Xst completion: 31.83 secs
+Total REAL time to Xst completion: 29.00 secs
+Total CPU time to Xst completion: 29.24 secs
  
 --> 
 
-Total memory usage is 521976 kilobytes
+Total memory usage is 491640 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   16 (   0 filtered)
