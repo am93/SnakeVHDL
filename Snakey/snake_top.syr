@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
  
 --> Reading design: snake_top.prj
 
@@ -108,62 +108,62 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ipcore_dir\clkgen.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ipcore_dir\clkgen.vhd" into library work
 Parsing entity <clkgen>.
 Parsing architecture <xilinx> of entity <clkgen>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\sevseg.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\sevseg.vhd" into library work
 Parsing entity <seg7>.
 Parsing architecture <Behavioral> of entity <seg7>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\prescaler.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\prescaler.vhd" into library work
 Parsing entity <prescaler>.
 Parsing architecture <Behavioral> of entity <prescaler>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\counter.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\counter.vhd" into library work
 Parsing entity <counter>.
 Parsing architecture <Behavioral> of entity <counter>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\vsync.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\vsync.vhd" into library work
 Parsing entity <vsync>.
 Parsing architecture <Behavioral> of entity <vsync>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\TopModul.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\TopModul.vhd" into library work
 Parsing entity <TopModul>.
 Parsing architecture <Behavioral> of entity <topmodul>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\shiftReg.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\shiftReg.vhd" into library work
 Parsing entity <shiftReg>.
 Parsing architecture <Behavioral> of entity <shiftreg>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\RAM30x40.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\RAM30x40.vhd" into library work
 Parsing entity <RAM32x40>.
 Parsing architecture <Behavioral> of entity <ram32x40>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\negedge.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\negedge.vhd" into library work
 Parsing entity <negedge>.
 Parsing architecture <Behavioral> of entity <negedge>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\hsync.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\hsync.vhd" into library work
 Parsing entity <hsync>.
 Parsing architecture <Behavioral> of entity <hsync>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\control_unit.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\control_unit.vhd" into library work
 Parsing entity <control_unit>.
 Parsing architecture <Behavioral> of entity <control_unit>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\vga_top.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\vga_top.vhd" into library work
 Parsing entity <vga_top>.
 Parsing architecture <Behavioral> of entity <vga_top>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ps2_top.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ps2_top.vhd" into library work
 Parsing entity <ps2_top>.
 Parsing architecture <Behavioral> of entity <ps2_top>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\LED_Control.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\LED_Control.vhd" into library work
 Parsing entity <LED_Control>.
 Parsing architecture <Behavioral> of entity <led_control>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\kcpsm6.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\kcpsm6.vhd" into library work
 Parsing entity <kcpsm6>.
 Parsing architecture <low_level_definition> of entity <kcpsm6>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\firmware.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\firmware.vhd" into library work
 Parsing package <jtag_loader_pkg>.
 Parsing package body <jtag_loader_pkg>.
 Parsing entity <firmware>.
 Parsing architecture <low_level_definition> of entity <firmware>.
 Parsing entity <jtag_loader_6>.
 Parsing architecture <Behavioral> of entity <jtag_loader_6>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd" into library work
 Parsing entity <ColorLEDControl>.
 Parsing architecture <Behavioral> of entity <colorledcontrol>.
-Parsing VHDL file "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" into library work
+Parsing VHDL file "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" into library work
 Parsing entity <snake_top>.
 Parsing architecture <Behavioral> of entity <snake_top>.
 
@@ -178,10 +178,10 @@ Elaborating entity <clkgen> (architecture <xilinx>) from library <work>.
 Elaborating entity <ps2_top> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <control_unit> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\control_unit.vhd" Line 172. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\control_unit.vhd" Line 172. Case statement is complete. others clause is never selected
 
 Elaborating entity <negedge> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\negedge.vhd" Line 91. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\negedge.vhd" Line 91. Case statement is complete. others clause is never selected
 
 Elaborating entity <shiftReg> (architecture <Behavioral>) from library <work>.
 
@@ -208,19 +208,19 @@ Elaborating entity <firmware> (architecture <low_level_definition>) with generic
 Elaborating entity <kcpsm6> (architecture <low_level_definition>) with generics from library <work>.
 
 Elaborating entity <LED_Control> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\LED_Control.vhd" Line 139. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\LED_Control.vhd" Line 139. Case statement is complete. others clause is never selected
 
 Elaborating entity <ColorLEDControl> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd" Line 90: colorled should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd" Line 90: colorled should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <snake_top>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd".
-INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd".
+INFO:Xst:3210 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <k_write_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\snake_top.vhd" line 222: Output port <read_strobe> of the instance <Inst_kcpsm6> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <resetLED>.
     Found 2-bit register for signal <data>.
     Found 6-bit register for signal <column>.
@@ -233,13 +233,13 @@ INFO:Xst:3210 - "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\snake_top.vhd" l
 Unit <snake_top> synthesized.
 
 Synthesizing Unit <clkgen>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ipcore_dir\clkgen.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ipcore_dir\clkgen.vhd".
     Summary:
 	no macro.
 Unit <clkgen> synthesized.
 
 Synthesizing Unit <ps2_top>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ps2_top.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ps2_top.vhd".
     Found 1-bit register for signal <sync_kbddata>.
     Found 1-bit register for signal <sync_kbdclk>.
     Summary:
@@ -247,7 +247,7 @@ Synthesizing Unit <ps2_top>.
 Unit <ps2_top> synthesized.
 
 Synthesizing Unit <control_unit>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\control_unit.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\control_unit.vhd".
     Found 4-bit register for signal <state>.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
@@ -269,7 +269,7 @@ Synthesizing Unit <control_unit>.
 Unit <control_unit> synthesized.
 
 Synthesizing Unit <negedge>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\negedge.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\negedge.vhd".
     Found 2-bit register for signal <state>.
     Found finite state machine <FSM_1> for signal <state>.
     -----------------------------------------------------------------------
@@ -290,20 +290,20 @@ Synthesizing Unit <negedge>.
 Unit <negedge> synthesized.
 
 Synthesizing Unit <shiftReg>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\shiftReg.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\shiftReg.vhd".
     Found 9-bit register for signal <data>.
     Summary:
 	inferred   9 D-type flip-flop(s).
 Unit <shiftReg> synthesized.
 
 Synthesizing Unit <TopModul>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\TopModul.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\TopModul.vhd".
     Summary:
 	no macro.
 Unit <TopModul> synthesized.
 
 Synthesizing Unit <prescaler>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\prescaler.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\prescaler.vhd".
         width = 18
         value = 200000
     Found 18-bit register for signal <precnt>.
@@ -316,7 +316,7 @@ Synthesizing Unit <prescaler>.
 Unit <prescaler> synthesized.
 
 Synthesizing Unit <seg7>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\sevseg.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\sevseg.vhd".
     Found 4-bit register for signal <num>.
     Found 4-bit register for signal <anode>.
     Found finite state machine <FSM_3> for signal <anode>.
@@ -343,7 +343,7 @@ Synthesizing Unit <seg7>.
 Unit <seg7> synthesized.
 
 Synthesizing Unit <vga_top>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\vga_top.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\vga_top.vhd".
         hcount_width = 11
         vcount_width = 10
     Found 2-bit register for signal <curr_bit>.
@@ -357,7 +357,7 @@ Synthesizing Unit <vga_top>.
 Unit <vga_top> synthesized.
 
 Synthesizing Unit <hsync>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\hsync.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\hsync.vhd".
         hcount_width = 11
         sync_pulse = 192
         display_time = 1280
@@ -374,7 +374,7 @@ Synthesizing Unit <hsync>.
 Unit <hsync> synthesized.
 
 Synthesizing Unit <counter_1>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\counter.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\counter.vhd".
         width = 11
         stop = 1599
     Found 11-bit register for signal <count>.
@@ -385,7 +385,7 @@ Synthesizing Unit <counter_1>.
 Unit <counter_1> synthesized.
 
 Synthesizing Unit <vsync>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\vsync.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\vsync.vhd".
         vcount_width = 10
         pulse_width = 2
         display_time = 480
@@ -403,7 +403,7 @@ Synthesizing Unit <vsync>.
 Unit <vsync> synthesized.
 
 Synthesizing Unit <counter_2>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\counter.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\counter.vhd".
         width = 10
         stop = 520
     Found 10-bit register for signal <count>.
@@ -414,7 +414,7 @@ Synthesizing Unit <counter_2>.
 Unit <counter_2> synthesized.
 
 Synthesizing Unit <RAM32x40>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\RAM30x40.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\RAM30x40.vhd".
     Found 1-bit register for signal <RAM_ff_0>.
     Found 1-bit register for signal <RAM_ff_1>.
     Found 1-bit register for signal <RAM_ff_2>.
@@ -1622,7 +1622,7 @@ Synthesizing Unit <RAM32x40>.
 Unit <RAM32x40> synthesized.
 
 Synthesizing Unit <firmware>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\firmware.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\firmware.vhd".
         C_FAMILY = "7S"
         C_RAM_SIZE_KWORDS = 1
         C_JTAG_LOADER_ENABLE = 0
@@ -1631,7 +1631,7 @@ Synthesizing Unit <firmware>.
 Unit <firmware> synthesized.
 
 Synthesizing Unit <kcpsm6>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\kcpsm6.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\kcpsm6.vhd".
         hwbuild = "00000000"
         interrupt_vector = "001111111111"
         scratch_pad_memory_size = 64
@@ -1863,7 +1863,7 @@ Synthesizing Unit <kcpsm6>.
 Unit <kcpsm6> synthesized.
 
 Synthesizing Unit <LED_Control>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\LED_Control.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\LED_Control.vhd".
     Found 1-bit register for signal <insert>.
     Found 2-bit register for signal <state>.
     Found 16-bit register for signal <led>.
@@ -1887,7 +1887,7 @@ Synthesizing Unit <LED_Control>.
 Unit <LED_Control> synthesized.
 
 Synthesizing Unit <ColorLEDControl>.
-    Related source file is "C:\Users\Anze\Projects\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd".
+    Related source file is "C:\Users\Ajda\Documents\GitHub\SnakeVHDL\Snakey\ColorLEDControl.vhd".
     Found 15-bit register for signal <counter>.
     Found 2-bit register for signal <colorLED>.
     Found 15-bit adder for signal <counter[14]_GND_83_o_add_23_OUT> created at line 109.
@@ -2396,12 +2396,12 @@ kcpsm_sleep    |    3.590|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 85.00 secs
-Total CPU time to Xst completion: 84.67 secs
+Total REAL time to Xst completion: 32.00 secs
+Total CPU time to Xst completion: 31.83 secs
  
 --> 
 
-Total memory usage is 568456 kilobytes
+Total memory usage is 521976 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   16 (   0 filtered)

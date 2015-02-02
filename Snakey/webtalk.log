@@ -4,7 +4,7 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 Project Information
 --------------------
 ProjectID=D3DD3E1FE3204B459509480CE3213C5D
-ProjectIteration=20
+ProjectIteration=24
 
 WebTalk Summary
 ----------------
@@ -13,4 +13,4 @@ INFO:WebTalk:1 - WebTalk is enabled because you are using a WebPACK license.
 INFO:WebTalk:8 - WebTalk Install setting is ON.
 INFO:WebTalk:6 - WebTalk User setting is ON.
 
-INFO:WebTalk:4 - C:/Users/Anze/Projects/GitHub/SnakeVHDL/Snakey/usage_statistics_webtalk.html WebTalk report has been successfully sent to Xilinx on 2015-02-01T19:24:50.  For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/14.6/ISE_DS/ISE/data/reports/webtalk_introduction.html
+INFO:WebTalk:4 - C:/Users/Ajda/Documents/GitHub/SnakeVHDL/Snakey/usage_statistics_webtalk.html WebTalk report has been successfully sent to Xilinx on 2015-02-02T12:27:23.  For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/14.6/ISE_DS/ISE/data/reports/webtalk_introduction.html
