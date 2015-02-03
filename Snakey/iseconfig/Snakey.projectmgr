@@ -8,7 +8,7 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/ps2_top - Behavioral C:|Users|Ajda|Documents|GitHub|SnakeVHDL|Snakey|ps2_top.vhd/Inst_TopModul - TopModul - Behavioral</ClosedNode>
-         <ClosedNode>/snake_top - Behavioral C:|Users|Ajda|Documents|GitHub|SnakeVHDL|Snakey|snake_top.vhd/ps2_inst - ps2_top - Behavioral</ClosedNode>
+         <ClosedNode>/snake_top - Behavioral C:|Users|Ajda|Documents|GitHub|SnakeVHDL|Snakey|snake_top.vhd/ps2_inst - ps2_top - Behavioral/Inst_TopModul - TopModul - Behavioral</ClosedNode>
          <ClosedNode>/snake_top - Behavioral C:|Users|Ajda|Documents|GitHub|SnakeVHDL|Snakey|snake_top.vhd/vga_inst - vga_top - Behavioral/Inst_vsync - vsync - Behavioral</ClosedNode>
          <ClosedNode>/snake_top - Behavioral C:|Users|Anze|Projects|GitHub|SnakeVHDL|Snakey|snake_top.vhd/Inst_firmware - firmware - low_level_definition</ClosedNode>
          <ClosedNode>/snake_top - Behavioral C:|Users|Anze|Projects|GitHub|SnakeVHDL|Snakey|snake_top.vhd/ps2_inst - ps2_top - Behavioral</ClosedNode>
@@ -77,7 +77,7 @@
       <SelectedItems>
          <SelectedItem>Configure Target Device</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e7000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e70000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
@@ -101,12 +101,12 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
 </Project>

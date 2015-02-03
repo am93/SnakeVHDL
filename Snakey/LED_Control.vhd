@@ -30,35 +30,38 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity LED_Control is
-    Port ( clk_i : in  STD_LOGIC;
-           rst_i : in  STD_LOGIC;
-           enable_i : in  STD_LOGIC_VECTOR (1 downto 0);
-			  ledRst_i : in  STD_LOGIC;
-           led_o : out  STD_LOGIC_VECTOR (15 downto 0));
+    Port ( clk_i : 		IN  STD_LOGIC;
+           rst_i :		IN  STD_LOGIC;
+           enable_i : 	IN  STD_LOGIC_VECTOR (1 downto 0);
+			  ledRst_i : 	IN  STD_LOGIC;
+           led_o : 		OUT STD_LOGIC_VECTOR (15 downto 0);
+			  pulse_o: 		OUT STD_LOGIC;
+			  pulseRst_o: 	OUT STD_LOGIC
+		);
 end LED_Control;
 
 architecture Behavioral of LED_Control is
 
 	-- signali za pomnilno celico LED
-	signal led : STD_LOGIC_VECTOR(15 downto 0);
-	signal insert : STD_LOGIC;
+	signal led : 		STD_LOGIC_VECTOR(15 downto 0);
+	signal insert : 	STD_LOGIC;
 	
 	-- signali za avtomat
 	type state_type is (s0,s1,s2); 
    signal state, next_state : state_type; 
-	signal pulse : std_logic;  					
-	signal sig   : std_logic_vector(1 downto 0); 
+	signal pulse : STD_LOGIC;  					
+	signal sig   : STD_LOGIC_VECTOR(1 downto 0); 
 	
 	-- signali za avtomat resetiranje stevila ledic
-	signal pulseRst : std_logic;  					
+	signal pulseRst : STD_LOGIC;  					
 	
 	-- negedge za resetiranje
 	COMPONENT negedge
 	PORT(
-		clk_i : IN std_logic;
-		rst_i : IN std_logic;
-		sig_i : IN std_logic;          
-		pulse_o : OUT std_logic
+		clk_i : 		IN STD_LOGIC;
+		rst_i : 		IN STD_LOGIC;
+		sig_i : 		IN STD_LOGIC;          
+		pulse_o : 	OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
@@ -75,6 +78,8 @@ begin
 	-- notranja signala za ledice
 	sig <= enable_i;
 	led_o <= led;
+	pulse_o <= pulse;
+	pulseRst_o <= pulseRst;
 
 	process (clk_i)
 	begin

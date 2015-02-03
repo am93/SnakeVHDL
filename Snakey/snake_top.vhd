@@ -30,20 +30,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity snake_top is
-    Port ( clk_m : 		in  STD_LOGIC;
-           reset_i : 	in  STD_LOGIC;
-           kbdclk_i : 	in  STD_LOGIC;
-           kbddata_i : 	in  STD_LOGIC;
-			  sw_i : 		in STD_LOGIC;
-           hsync_o : 	out  STD_LOGIC;
-           vsync_o : 	out  STD_LOGIC;
-           red_o : 		out  STD_LOGIC_VECTOR (2 downto 0);
-           green_o : 	out  STD_LOGIC_VECTOR (2 downto 0);
-           blue_o : 		out  STD_LOGIC_VECTOR (1 downto 0);
-			  cathode_o : 	out STD_LOGIC_VECTOR (0 to 6);
-			  anode_o : 	out STD_LOGIC_VECTOR (3 downto 0);
-			  led_o : 		out STD_LOGIC_VECTOR(15 downto 0);
-			  colorLED_o : out  STD_LOGIC_VECTOR (1 downto 0)
+    PORT ( clk_m : 		IN  STD_LOGIC;
+           reset_i : 	IN  STD_LOGIC;
+           kbdclk_i : 	IN  STD_LOGIC;
+           kbddata_i : 	IN  STD_LOGIC;
+			  sw_i : 		IN  STD_LOGIC;
+           hsync_o : 	OUT  STD_LOGIC;
+           vsync_o : 	OUT  STD_LOGIC;
+           red_o : 		OUT  STD_LOGIC_VECTOR (2 downto 0);
+           green_o : 	OUT  STD_LOGIC_VECTOR (2 downto 0);
+           blue_o : 		OUT  STD_LOGIC_VECTOR (1 downto 0);
+			  cathode_o : 	OUT  STD_LOGIC_VECTOR (0 to 6);
+			  anode_o : 	OUT  STD_LOGIC_VECTOR (3 downto 0);
+			  led_o : 		OUT  STD_LOGIC_VECTOR(15 downto 0);
+			  colorLED_o : OUT  STD_LOGIC_VECTOR (1 downto 0)
 			  );
 end snake_top;
 
@@ -51,121 +51,127 @@ architecture Behavioral of snake_top is
 	
 	COMPONENT clkgen
 	PORT(
-		clk_m : in     std_logic;
-		clk_i : out    std_logic
+		clk_m : 		IN STD_LOGIC;
+		clk_i : 		OUT STD_LOGIC
 	);
 	END COMPONENT;
 	
 	COMPONENT ps2_top
 	PORT(
-		clk_i : IN std_logic;
-		rst_i : IN std_logic;
-		kbdclk : IN std_logic;
-		kbddata : IN std_logic;          
-		sc_ready : OUT std_logic;
-		data_out : OUT std_logic_vector(7 downto 0);
-		cathode_o : OUT std_logic_vector(0 to 6);
-		anode_o : OUT std_logic_vector(3 downto 0)
+		clk_i : 			IN STD_LOGIC;
+		rst_i : 			IN STD_LOGIC;
+		kbdclk : 		IN STD_LOGIC;
+		kbddata : 		IN STD_LOGIC;          
+		sc_ready : 		OUT STD_LOGIC;
+		data_out : 		OUT STD_LOGIC_VECTOR(7 downto 0);
+		cathode_o : 	OUT STD_LOGIC_VECTOR(0 to 6);
+		anode_o : 		OUT STD_LOGIC_VECTOR(3 downto 0)
 	);
 	END COMPONENT;
 	
 	COMPONENT vga_top
 	PORT(
-		clk_i : IN std_logic;
-		reset_i : IN std_logic;
-		write_enable : IN std_logic;
-		column_in : IN std_logic_vector(5 downto 0);
-		row_in : IN std_logic_vector(4 downto 0);
-		data_in : IN std_logic_vector(1 downto 0);          
-		hsync_o : OUT std_logic;
-		vsync_o : OUT std_logic;
-		red_o : OUT std_logic_vector(2 downto 0);
-		green_o : OUT std_logic_vector(2 downto 0);
-		blue_o : OUT std_logic_vector(1 downto 0)
+		clk_i : 			IN STD_LOGIC;
+		reset_i :		IN STD_LOGIC;
+		write_enable : IN STD_LOGIC;
+		column_in : 	IN STD_LOGIC_VECTOR(5 downto 0);
+		row_in : 		IN STD_LOGIC_VECTOR(4 downto 0);
+		data_in : 		IN STD_LOGIC_VECTOR(1 downto 0);
+		pulse_i: 		IN STD_LOGIC;
+		pulseRst_i: 	IN STD_LOGIC;		
+		hsync_o : 		OUT STD_LOGIC;
+		vsync_o : 		OUT STD_LOGIC;
+		red_o : 			OUT STD_LOGIC_VECTOR(2 downto 0);
+		green_o : 		OUT STD_LOGIC_VECTOR(2 downto 0);
+		blue_o : 		OUT STD_LOGIC_VECTOR(1 downto 0)
 		);
 	END COMPONENT;
 	
 	COMPONENT firmware
 	PORT(
-		address : IN std_logic_vector(11 downto 0);
-		enable : IN std_logic;
-		clk : IN std_logic;          
-		instruction : OUT std_logic_vector(17 downto 0);
-		rdl : OUT std_logic
+		address : 		IN STD_LOGIC_VECTOR(11 downto 0);
+		enable : 		IN STD_LOGIC;
+		clk : 			IN STD_LOGIC;          
+		instruction : 	OUT STD_LOGIC_VECTOR(17 downto 0);
+		rdl : 			OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
 	COMPONENT kcpsm6
 	PORT(
-		instruction : IN std_logic_vector(17 downto 0);
-		in_port : IN std_logic_vector(7 downto 0);
-		interrupt : IN std_logic;
-		sleep : IN std_logic;
-		reset : IN std_logic;
-		clk : IN std_logic;          
-		address : OUT std_logic_vector(11 downto 0);
-		bram_enable : OUT std_logic;
-		out_port : OUT std_logic_vector(7 downto 0);
-		port_id : OUT std_logic_vector(7 downto 0);
-		write_strobe : OUT std_logic;
-		k_write_strobe : OUT std_logic;
-		read_strobe : OUT std_logic;
-		interrupt_ack : OUT std_logic
+		instruction : 		IN STD_LOGIC_VECTOR(17 downto 0);
+		in_port : 			IN STD_LOGIC_VECTOR(7 downto 0);
+		interrupt : 		IN STD_LOGIC;
+		sleep : 				IN STD_LOGIC;
+		reset : 				IN STD_LOGIC;
+		clk : 				IN STD_LOGIC;          
+		address : 			OUT STD_LOGIC_VECTOR(11 downto 0);
+		bram_enable : 		OUT STD_LOGIC;
+		out_port : 			OUT STD_LOGIC_VECTOR(7 downto 0);
+		port_id : 			OUT STD_LOGIC_VECTOR(7 downto 0);
+		write_strobe : 	OUT STD_LOGIC;
+		k_write_strobe : 	OUT STD_LOGIC;
+		read_strobe : 		OUT STD_LOGIC;
+		interrupt_ack : 	OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
 	COMPONENT LED_Control
 	PORT(
-		clk_i : IN std_logic;
-		rst_i : IN std_logic;
-		enable_i : IN std_logic_vector(1 downto 0);
-		ledRst_i : in  STD_LOGIC;		
-		led_o : OUT std_logic_vector(15 downto 0)
+		clk_i : 			IN STD_LOGIC;
+		rst_i : 			IN STD_LOGIC;
+		enable_i : 		IN STD_LOGIC_VECTOR(1 downto 0);
+		ledRst_i : 		IN STD_LOGIC;		
+		led_o : 			OUT STD_LOGIC_VECTOR(15 downto 0);
+		pulse_o: 		OUT STD_LOGIC;
+		pulseRst_o: 	OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
 	COMPONENT ColorLEDControl
 	PORT(
-		clk_i : IN std_logic;
-		rst_i : IN std_logic;
-		data_i : IN std_logic_vector(15 downto 0);          
-		colorLED_o : OUT std_logic_vector(1 downto 0)
+		clk_i : 			IN STD_LOGIC;
+		rst_i : 			IN STD_LOGIC;
+		data_i :			IN STD_LOGIC_VECTOR(15 downto 0);          
+		colorLED_o : 	OUT STD_LOGIC_VECTOR(1 downto 0)
 		);
 	END COMPONENT;
 	
 	-- interna ura (50MHz)
-	signal clk_i:				std_logic;
+	signal clk_i:				STD_LOGIC;
 	
 	-- PS2 signali
-	signal sc_ready: 			std_logic;
-	signal scan_code: 		std_logic_vector(7 downto 0);
+	signal sc_ready: 			STD_LOGIC;
+	signal scan_code: 		STD_LOGIC_VECTOR(7 downto 0);
 	
 	-- VGA signali
-	signal write_enable:		std_logic;
-	signal row:					std_logic_vector(4 downto 0);
-	signal column:				std_logic_vector(5 downto 0);
-	signal data:				std_logic_vector(1 downto 0);
+	signal write_enable:		STD_LOGIC;
+	signal row:					STD_LOGIC_VECTOR(4 downto 0);
+	signal column:				STD_LOGIC_VECTOR(5 downto 0);
+	signal data:				STD_LOGIC_VECTOR(1 downto 0);
 	
 	-- firmware signali
-	signal address :			std_logic_vector(11 downto 0);
-	signal instruction :	 	std_logic_vector(17 downto 0);
-	signal kcpsm_inport:		std_logic_vector(7 downto 0);
-	signal kcpsm_outport:	std_logic_vector(7 downto 0);
-	signal kcpsm_portid:		std_logic_vector(7 downto 0);
-	signal kcpsm_enable:	 	std_logic;
-	signal kcpsm_rst:			std_logic;
-	signal kcpsm_int:			std_logic;
-	signal kcpsm_intack:		std_logic;
-	signal kcpsm_rstrobe:	std_logic;
-	signal kcpsm_wstrobe:	std_logic;
-	signal kcpsm_sleep:		std_logic;
-	signal kcpsm_kwstr:		std_logic;
+	signal address :			STD_LOGIC_VECTOR(11 downto 0);
+	signal instruction :	 	STD_LOGIC_VECTOR(17 downto 0);
+	signal kcpsm_inport:		STD_LOGIC_VECTOR(7 downto 0);
+	signal kcpsm_outport:	STD_LOGIC_VECTOR(7 downto 0);
+	signal kcpsm_portid:		STD_LOGIC_VECTOR(7 downto 0);
+	signal kcpsm_enable:	 	STD_LOGIC;
+	signal kcpsm_rst:			STD_LOGIC;
+	signal kcpsm_int:			STD_LOGIC;
+	signal kcpsm_intack:		STD_LOGIC;
+	signal kcpsm_rstrobe:	STD_LOGIC;
+	signal kcpsm_wstrobe:	STD_LOGIC;
+	signal kcpsm_sleep:		STD_LOGIC;
+	signal kcpsm_kwstr:		STD_LOGIC;
 	
 	-- signali za LED kontroler
-	signal resetLED : 		std_logic;
+	signal resetLED : 		STD_LOGIC;
+	signal pulse :				STD_LOGIC;
+	signal pulseRst: 			STD_LOGIC;
 	
 	-- interni signal za prenos stevila ledic
-	signal internalLED :		std_logic_vector(15 downto 0);
+	signal internalLED :		STD_LOGIC_VECTOR(15 downto 0);
 	
 begin
 	-- interni signal vezan na output
@@ -205,6 +211,8 @@ begin
 		column_in => column,
 		row_in => row,
 		data_in => data,
+		pulse_i => pulse,
+		pulseRst_i => pulseRst,
 		hsync_o => hsync_o,
 		vsync_o => vsync_o,
 		red_o => red_o,
@@ -241,9 +249,11 @@ begin
 	Inst_LED_Control: LED_Control PORT MAP(
 		clk_i => clk_i,
 		rst_i => reset_i,
-		enable_i => data,		 -- signal za povecanje stevila ledic
-		ledRst_i => resetLED, -- signal za resetiranje ledic
-		led_o => internalLED  -- vezan tudi na output (stevilo ledic)
+		enable_i => data,		 	-- signal za povecanje stevila ledic
+		ledRst_i => resetLED, 	-- signal za resetiranje ledic
+		led_o => internalLED,  	-- vezan tudi na output (stevilo ledic)
+		pulse_o => pulse,			-- stabiliziran signal, da je kaca pojedla hrano, ki je v visokem stanju 1 up
+		pulseRst_o => pulseRst	-- stabiliziran signal za konec igre, ki je v visokem stanju 1 up
 	);
 	
 	-- kontrola barvnih ledic

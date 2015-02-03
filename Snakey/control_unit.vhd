@@ -24,20 +24,20 @@ use IEEE. STD_LOGIC_UNSIGNED. ALL;
 
 
 entity control_unit is
-    Port ( clk_i : in  STD_LOGIC;
-			  rst_i : in  STD_LOGIC;
-           pulse_i : in  STD_LOGIC;
-           sync_kbddata_i : in  STD_LOGIC;
-           rdy_o : out  STD_LOGIC;
-           shren_o : out  STD_LOGIC);
+    Port ( clk_i : 				IN  STD_LOGIC;
+			  rst_i : 				IN  STD_LOGIC;
+           pulse_i : 			IN  STD_LOGIC;
+           sync_kbddata_i : 	IN  STD_LOGIC;
+           rdy_o : 				OUT  STD_LOGIC;
+           shren_o : 			OUT  STD_LOGIC);
 end control_unit;
 
 architecture Behavioral of control_unit is
 	type state_type is (idle, start, s0,s1,s2,s3,s4,s5,s6,s7,parity,stop); 
    signal state, next_state : state_type; 
    --Declare internal signals for all outputs of the state-machine
-   signal rdy : std_logic;  -- example output signal
-	signal shren : std_logic;
+   signal rdy : 	STD_LOGIC;  -- example output signal
+	signal shren : STD_LOGIC;
    --other outputs
 
 begin

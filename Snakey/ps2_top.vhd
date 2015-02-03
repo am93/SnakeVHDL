@@ -33,14 +33,14 @@ use IEEE. STD_LOGIC_UNSIGNED. ALL;
 --use UNISIM.VComponents.all;
 
 entity ps2_top is
-    Port ( clk_i : in  STD_LOGIC;
-           rst_i : in  STD_LOGIC;
-			  kbdclk : in STD_LOGIC;
-			  kbddata : in STD_LOGIC;
-			  sc_ready: out STD_LOGIC;
-			  data_out: out STD_LOGIC_VECTOR(7 downto 0);
-			  cathode_o: out STD_LOGIC_VECTOR(0 to 6);
-			  anode_o: out STD_LOGIC_VECTOR (3 downto 0)
+    Port ( clk_i : 		IN  STD_LOGIC;
+           rst_i : 		IN  STD_LOGIC;
+			  kbdclk : 		IN STD_LOGIC;
+			  kbddata : 	IN STD_LOGIC;
+			  sc_ready: 	OUT STD_LOGIC;
+			  data_out: 	OUT STD_LOGIC_VECTOR(7 downto 0);
+			  cathode_o: 	OUT STD_LOGIC_VECTOR(0 to 6);
+			  anode_o: 		OUT STD_LOGIC_VECTOR (3 downto 0)
 			  );
 end ps2_top;
 
@@ -49,51 +49,51 @@ architecture Behavioral of ps2_top is
 	---- Definicija komponent ---
 	-----------------------------
 	COMPONENT control_unit
-	PORT(
-		clk_i : IN std_logic;
-		rst_i : IN std_logic;
-		pulse_i : IN std_logic;
-		sync_kbddata_i : IN std_logic;          
-		rdy_o : OUT std_logic;
-		shren_o : OUT std_logic
+		PORT(
+			clk_i : 				IN STD_LOGIC;
+			rst_i : 				IN STD_LOGIC;
+			pulse_i : 			IN STD_LOGIC;
+			sync_kbddata_i : 	IN STD_LOGIC;          
+			rdy_o : 				OUT STD_LOGIC;
+			shren_o : 			OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
 	COMPONENT negedge
 	PORT(
-		clk_i : IN std_logic;
-		rst_i : IN std_logic;
-		sig_i : IN std_logic;          
-		pulse_o : OUT std_logic
+		clk_i : 		IN STD_LOGIC;
+		rst_i : 		IN STD_LOGIC;
+		sig_i : 		IN STD_LOGIC;          
+		pulse_o : 	OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
 	COMPONENT shiftReg
-	PORT(
-		clk_i : IN std_logic;
-		rst_i : IN std_logic;
-		enable : IN std_logic;
-		input : IN std_logic;          
-		data_out : OUT std_logic_vector(8 downto 0)
+		PORT(
+			clk_i : 		IN STD_LOGIC;
+			rst_i : 		IN STD_LOGIC;
+			enable : 	IN STD_LOGIC;
+			input : 		IN STD_LOGIC;          
+			data_out : 	OUT STD_LOGIC_VECTOR(8 downto 0)
 		);
 	END COMPONENT;
 	
 	COMPONENT TopModul
-	PORT(
-		clk_i : IN std_logic;
-		reset_i : IN std_logic;
-		data_i : IN std_logic_vector(15 downto 0);          
-		cathode_o : OUT std_logic_vector(6 downto 0);
-		anode_o : OUT std_logic_vector(3 downto 0)
+		PORT(
+			clk_i : 		IN STD_LOGIC;
+			reset_i : 	IN STD_LOGIC;
+			data_i : 	IN STD_LOGIC_VECTOR(15 downto 0);          
+			cathode_o : OUT STD_LOGIC_VECTOR(6 downto 0);
+			anode_o : 	OUT STD_LOGIC_VECTOR(3 downto 0)
 		);
 	END COMPONENT;
 	
-	signal sync_kbdclk: STD_LOGIC;
-	signal sync_kbddata: STD_LOGIC;
-	signal pulse_wire : STD_LOGIC;
-	signal shren_wire : STD_LOGIC;
-	signal data_wire : STD_LOGIC_VECTOR(15 downto 0);
-	signal data_val : STD_LOGIC_VECTOR(8 downto 0);
+	signal sync_kbdclk: 		STD_LOGIC;
+	signal sync_kbddata: 	STD_LOGIC;
+	signal pulse_wire : 		STD_LOGIC;
+	signal shren_wire : 		STD_LOGIC;
+	signal data_wire : 		STD_LOGIC_VECTOR(15 downto 0);
+	signal data_val : 		STD_LOGIC_VECTOR(8 downto 0);
 
 begin
 

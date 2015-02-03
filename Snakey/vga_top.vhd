@@ -37,57 +37,95 @@ entity vga_top is
 		hcount_width : integer := 11;
 		vcount_width : integer := 10
 	 );
-    Port ( clk_i : 			in  STD_LOGIC;
-           reset_i : 		in  STD_LOGIC;
-			  write_enable:	in  STD_LOGIC;
-			  column_in: 		in  STD_LOGIC_VECTOR(5 downto 0);
-			  row_in: 			in  STD_LOGIC_VECTOR(4 downto 0);
-			  data_in:			in	 STD_LOGIC_VECTOR(1 downto 0);
-           hsync_o : 		out  STD_LOGIC;
-           vsync_o : 		out  STD_LOGIC;
-			  red_o: 			out STD_LOGIC_VECTOR(2 downto 0);
-			  green_o: 			out STD_LOGIC_VECTOR(2 downto 0);
-			  blue_o: 			out STD_LOGIC_VECTOR(1 downto 0)
+    Port ( clk_i : 			IN  STD_LOGIC;
+           reset_i : 		IN  STD_LOGIC;
+			  write_enable:	IN  STD_LOGIC;
+			  column_in: 		IN  STD_LOGIC_VECTOR(5 downto 0);
+			  row_in: 			IN  STD_LOGIC_VECTOR(4 downto 0);
+			  data_in:			IN	 STD_LOGIC_VECTOR(1 downto 0);
+			  pulse_i: 			IN STD_LOGIC;
+			  pulseRst_i: 		IN STD_LOGIC;
+           hsync_o : 		OUT STD_LOGIC;
+           vsync_o : 		OUT STD_LOGIC;
+			  red_o: 			OUT STD_LOGIC_VECTOR(2 downto 0);
+			  green_o: 			OUT STD_LOGIC_VECTOR(2 downto 0);
+			  blue_o: 			OUT STD_LOGIC_VECTOR(1 downto 0)
 			  );
 end vga_top;
 
 architecture Behavioral of vga_top is
-	component hsync
-		Generic (hcount_width : integer := 11; sync_pulse : integer := 192; display_time : integer := 1280; front_porch : integer := 32; 
-					back_porch : integer := 96; scan_time : integer := 1600; column_width : integer := 10);
-		Port (clk_i : in STD_LOGIC; reset_i : in STD_LOGIC; hsync_o : out STD_LOGIC; hvidon_o : out STD_LOGIC; rowclk_o : out STD_LOGIC; 
-				column_o : out STD_LOGIC_VECTOR (column_width -1 downto 0));
-	end component;
-	
-	component vsync	
-		Generic (vcount_width : integer := vcount_width; pulse_width : integer := 2; display_time : integer := 480; front_porch : integer := 10; 
-					back_porch : integer := 29; scan_time : integer := 521);
-		PORT(clk_i : IN std_logic; reset_i : IN std_logic; cnt_enable : IN std_logic;	vsync_o : OUT std_logic; 
-					row_o : OUT std_logic_vector(vcount_width-1 downto 0);vvidon_o : OUT std_logic);
-	end component;
-
-	COMPONENT RAM32x40
-	PORT(
-		clk_i : IN std_logic;
-		we_i : IN std_logic;
-		addrIN_i : IN std_logic_vector(4 downto 0);
-		col_i : IN std_logic_vector(5 downto 0);
-		addrOUT_i : IN std_logic_vector(4 downto 0);
-		data_i : IN std_logic;          
-		data_o : OUT std_logic_vector(0 to 39)
+	COMPONENT hsync
+		GENERIC (hcount_width : integer := 11; 
+					sync_pulse : 	integer := 192; 
+					display_time : integer := 1280; 
+					front_porch : 	integer := 32; 
+					back_porch : 	integer := 96; 
+					scan_time : 	integer := 1600; 
+					column_width : integer := 10
+		);
+		PORT (clk_i : 		IN STD_LOGIC; 
+				reset_i : 	IN STD_LOGIC; 
+				hsync_o : 	OUT STD_LOGIC; 
+				hvidon_o : 	OUT STD_LOGIC; 
+				rowclk_o : 	OUT STD_LOGIC; 
+				column_o : 	OUT STD_LOGIC_VECTOR (column_width -1 downto 0)
 		);
 	END COMPONENT;
 	
-	signal hvidon: STD_LOGIC;
-	signal rowclk: STD_LOGIC;
-	signal vvidon: STD_LOGIC;
-	signal column: STD_LOGIC_VECTOR(9 downto 0);
-	signal row: STD_LOGIC_VECTOR(vcount_width-1 downto 0);
-	signal color: STD_LOGIC_VECTOR(7 downto 0);
+	COMPONENT vsync	
+		GENERIC (vcount_width : integer := vcount_width; 
+					pulse_width : 	integer := 2; 
+					display_time : integer := 480; 
+					front_porch : 	integer := 10; 
+					back_porch : 	integer := 29; 
+					scan_time : 	integer := 521
+		);
+		PORT (clk_i : 			IN STD_LOGIC; 
+				reset_i : 		IN STD_LOGIC; 
+				cnt_enable : 	IN STD_LOGIC;	
+				vsync_o : 		OUT STD_LOGIC; 
+				row_o : 			OUT STD_LOGIC_VECTOR(vcount_width-1 downto 0);
+				vvidon_o : 		OUT STD_LOGIC
+		);
+	END COMPONENT;
+
+	COMPONENT RAM32x40
+		PORT(
+			clk_i : 		IN STD_LOGIC;
+			we_i : 		IN STD_LOGIC;
+			addrIN_i : 	IN STD_LOGIC_VECTOR(4 downto 0);
+			col_i : 		IN STD_LOGIC_VECTOR(5 downto 0);
+			addrOUT_i : IN STD_LOGIC_VECTOR(4 downto 0);
+			data_i : 	IN STD_LOGIC;          
+			data_o : 	OUT STD_LOGIC_VECTOR(0 to 39)
+		);
+	END COMPONENT;
+	
+	COMPONENT colorController
+		PORT(
+			clk_i : 		IN STD_LOGIC;
+			rst_i : 		IN STD_LOGIC;
+			en_i : 		IN STD_LOGIC;  
+			gameRst_i : IN STD_LOGIC;
+			col_o : 		OUT STD_LOGIC_VECTOR(7 downto 0)
+		);
+	END COMPONENT;
+	
+	-- signali za VGA
+	signal hvidon: 	STD_LOGIC;
+	signal rowclk: 	STD_LOGIC;
+	signal vvidon: 	STD_LOGIC;
+	signal column: 	STD_LOGIC_VECTOR(9 downto 0);
+	signal row: 		STD_LOGIC_VECTOR(vcount_width-1 downto 0);
+	signal color: 		STD_LOGIC_VECTOR(7 downto 0);
+	
 	-- signals for RAM
-	signal data_got_first: STD_LOGIC_VECTOR(39 downto 0);
+	signal data_got_first: 	STD_LOGIC_VECTOR(39 downto 0);
 	signal data_got_second: STD_LOGIC_VECTOR(39 downto 0);
-	signal curr_bit: STD_LOGIC_VECTOR(1 downto 0);
+	signal curr_bit: 			STD_LOGIC_VECTOR(1 downto 0);
+	
+	-- signal za nastavljanje barve kaèe
+	signal snakeColor: STD_LOGIC_VECTOR(7 downto 0);
 
 begin
 	
@@ -131,6 +169,14 @@ begin
 		data_o => data_got_second
 	);
 	
+	Inst_colorController: colorController PORT MAP(
+		clk_i => clk_i,
+		rst_i => reset_i,
+		en_i => pulse_i,
+		gameRst_i => pulseRst_i,
+		col_o => snakeColor
+	);
+	
 	
 	red_o <= color(7 downto 5);
 	green_o <= color(4 downto 2);
@@ -150,7 +196,8 @@ begin
 					case(curr_bit) is
 						-- barva za kaco
 						when "10" =>
-							color <= "00011100";
+							--color <= "00011100";
+							color <= snakeColor;		-- barva odvisna od tega koliko hrane je kaca ze pojedla
 						-- barva za hrano
 						when "01" =>
 							color <= "11100000";
